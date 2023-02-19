@@ -7,4 +7,5 @@ public class TerrainData : ScriptableObject
 {
     public GameObject terrain;
     public int maxInSuccession; // Number of terrains in a row of the same type
+    public int minInSuccession; // min number of terrains in a row
 }

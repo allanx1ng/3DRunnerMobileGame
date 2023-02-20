@@ -25,7 +25,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 GetInput()
     {
         Vector3 movement = new Vector3(0f, 0f, 0f);
+
+  
+        CalculateMobileMovement(ref movement);
         CalculateComputerMovement(ref movement);
+        
 
         return movement;
     }
@@ -35,7 +39,6 @@ public class PlayerController : MonoBehaviour
         // Z-Axis (left, right)
         if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("What");
             movement.x = horizontalSpeed;
         }
         else if (Input.GetKey(KeyCode.A))
@@ -53,6 +56,25 @@ public class PlayerController : MonoBehaviour
             movement.z = -forwardSpeed;
         }
 
+    }
+
+    private void CalculateMobileMovement(ref Vector3 movement)
+    {
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.position.x < Screen.width / 2)
+            {
+                movement.x = -horizontalSpeed;
+            } 
+            else
+            {
+                movement.x = horizontalSpeed;
+            }
+
+        }
     }
 
 

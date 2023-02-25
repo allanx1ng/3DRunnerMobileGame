@@ -32,7 +32,7 @@ public class TerrainGenerator : MonoBehaviour
     void Update()
     {
         
-        if (IsTerrainSpawnNeeded())
+        while (IsTerrainSpawnNeeded())
         {
             SpawnRandomTerrain();
         }
@@ -64,7 +64,7 @@ public class TerrainGenerator : MonoBehaviour
     // Deletes the old terrain if old terrain surpasses maxTerrainCount, and it is a certain amount of distance behind the player
     private void DeleteTerrain() {
 
-        if (IsPlayerPastTerrain())
+        while (IsPlayerPastTerrain())
         {
             Destroy(terrains[0]);
             terrains.RemoveAt(0);

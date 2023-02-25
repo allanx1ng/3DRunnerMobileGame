@@ -46,8 +46,8 @@ public class PlayerController : MonoBehaviour
                 Vector3 movement = new Vector3(deltaPosition.x, 0, 0) * horizontalSpeed;
 
                 // Move the player based on the movement and the speed
-                // transform.Translate(movement * Time.deltaTime * horizontalSpeed, Space.World);
-                transform.position += movement * Time.deltaTime;
+                transform.Translate(movement * Time.deltaTime, Space.World);
+                // transform.position += movement * Time.deltaTime;
             }
         }
     }

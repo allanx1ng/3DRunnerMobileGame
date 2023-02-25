@@ -75,9 +75,5 @@ public class ShopManagerScript : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void openShop() {
-        gameObject.transform.parent.Find("Panel").gameObject.SetActive(false);
-        gameObject.SetActive(true);
-
-    }
+    
 }

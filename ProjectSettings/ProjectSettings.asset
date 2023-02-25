@@ -818,11 +818,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 86ccf5db-2646-451c-bc14-f99daeab48ce
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: ReadySetRoll
+  organizationId: stormcoin
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

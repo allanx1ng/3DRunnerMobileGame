@@ -74,7 +74,7 @@ public class TerrainGenerator : MonoBehaviour
 
     private bool IsPlayerPastTerrain() {
         
-        return player.transform.position.z - 7 > terrains[0].transform.position.z;
+        return player.transform.position.z - 5 > terrains[0].transform.position.z;
     }
 
     private bool IsTerrainSpawnNeeded() {

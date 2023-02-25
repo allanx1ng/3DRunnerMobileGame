@@ -7,10 +7,13 @@ public class PlayerController : MonoBehaviour
 
     public float forwardSpeed; 
     public float horizontalSpeed;
+
+    private GameObject parent;
     
     // Start is called before the first frame update
     void Start()
     {
+        parent = transform.parent.gameObject;
         initializeCameraFollow();
     }
  
@@ -46,8 +49,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 movement = new Vector3(deltaPosition.x, 0, 0) * horizontalSpeed;
 
                 // Move the player based on the movement and the speed
-                transform.Translate(movement * Time.deltaTime, Space.World);
-                // transform.position += movement * Time.deltaTime;
+                parent.transform.Translate(movement * Time.deltaTime, Space.World);
             }
         }
     }
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movement = new Vector3(0, 0, 1);
         movement *= forwardSpeed * Time.deltaTime;
-        transform.Translate(movement, Space.World);
+        parent.transform.Translate(movement, Space.World);
     }
 
 

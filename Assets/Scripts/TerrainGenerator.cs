@@ -10,6 +10,8 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private List<TerrainData> terrainData = new List<TerrainData>();
     [SerializeField] private Transform terrainHolder;
 
+    [SerializeField] private GameObject player; // player holder
+
 
     // List of all currently placed terrains on the scene
     private List<GameObject> terrains = new List<GameObject>();
@@ -30,10 +32,12 @@ public class TerrainGenerator : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.F))
+        if (IsTerrainSpawnNeeded())
         {
             SpawnRandomTerrain();
         }
+
+        DeleteTerrain();
 
     }
 
@@ -53,16 +57,28 @@ public class TerrainGenerator : MonoBehaviour
             terrain.transform.SetParent(terrainHolder);
             terrains.Add(terrain);
             currentPosition.z++;
-
-            if (terrains.Count > maxTerrainCount)
-            {
-                Destroy(terrains[0]);
-                terrains.RemoveAt(0);
-            }
         }
         
+    }
 
+    // Deletes the old terrain if old terrain surpasses maxTerrainCount, and it is a certain amount of distance behind the player
+    private void DeleteTerrain() {
 
+        if (IsPlayerPastTerrain())
+        {
+            Destroy(terrains[0]);
+            terrains.RemoveAt(0);
+        }
+
+    }
+
+    private bool IsPlayerPastTerrain() {
+        
+        return player.transform.position.z - 7 > terrains[0].transform.position.z;
+    }
+
+    private bool IsTerrainSpawnNeeded() {
+        return terrains.Count < maxTerrainCount;
     }
 
 }

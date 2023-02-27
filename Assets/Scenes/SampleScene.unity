@@ -432,14 +432,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbf1167d67c04f94a244f6070262c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numOfObstaclesOnRow: 5
   obstacleGeneratorObject: {fileID: 18749310}
   maxTerrainCount: 30
+  terrainHolder: {fileID: 639242765}
+  player: {fileID: 694478757}
   terrainData:
   - {fileID: 11400000, guid: 363081fd18f7a324fbde1a7e3d6e062b, type: 2}
   - {fileID: 11400000, guid: 3bab734b6304cb548b2349b2e5a11ccb, type: 2}
   - {fileID: 11400000, guid: abd74c871dcf2b747ab1fbc572874a7e, type: 2}
-  terrainHolder: {fileID: 639242765}
-  player: {fileID: 694478757}
 --- !u!1 &639242764
 GameObject:
   m_ObjectHideFlags: 0

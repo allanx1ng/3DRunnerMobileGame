@@ -24,12 +24,12 @@ public class PlayerController : MonoBehaviour
         movePlayerForward();
     }
 
+    // Initializes the camera to follow the model component
     void initializeCameraFollow()
     {
         GameObject camera = GameObject.Find("Main Camera");
         Debug.Log(camera);
         camera.GetComponent<CameraFollow>().setTarget(gameObject);
-
     }
 
 

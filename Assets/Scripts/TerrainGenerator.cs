@@ -56,7 +56,7 @@ public class TerrainGenerator : MonoBehaviour
             GameObject terrain = Instantiate(terrainData[chooseTerrain].terrain, currentPosition, Quaternion.identity);
             terrain.transform.SetParent(terrainHolder);
             terrains.Add(terrain);
-            currentPosition.z++;
+            currentPosition.z += 5;
         }
         
     }
@@ -74,7 +74,7 @@ public class TerrainGenerator : MonoBehaviour
 
     private bool IsPlayerPastTerrain() {
         
-        return player.transform.position.z - 5 > terrains[0].transform.position.z;
+        return player.transform.position.z - 10 > terrains[0].transform.position.z;
     }
 
     private bool IsTerrainSpawnNeeded() {

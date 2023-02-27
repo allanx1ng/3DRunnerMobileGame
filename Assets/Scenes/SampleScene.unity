@@ -193,6 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18749311}
+  - component: {fileID: 18749312}
   m_Layer: 0
   m_Name: Obstacle Generator
   m_TagString: Untagged
@@ -215,6 +216,20 @@ Transform:
   m_Father: {fileID: 1932635018}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18749312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18749310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64299d330d9d3c34fbaab26b1b2bd3a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeOfBlock: 5
+  obstacleHolder: {fileID: 1899434614}
 --- !u!1001 &101147718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403cbf1167d67c04f94a244f6070262c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleGeneratorObject: {fileID: 18749310}
   maxTerrainCount: 30
   terrainData:
   - {fileID: 11400000, guid: 363081fd18f7a324fbde1a7e3d6e062b, type: 2}
@@ -969,9 +985,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeDirt
       objectReference: {fileID: 0}
-    - target: {fileID: 4164103436521339560, guid: 83c701ae920283e4a9e729fc5f209530, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c6e51413bd2428c4792bd4edad6bbe9e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83c701ae920283e4a9e729fc5f209530, type: 3}

@@ -15,3 +15,6 @@ MonoBehaviour:
   terrain: {fileID: 4774864261041513952, guid: be43eef19794a6645b30a9b8fab92dbd, type: 3}
   maxInSuccession: 11
   minInSuccession: 1
+  spawnableMobs: []
+  spawnableBlocks:
+  - {fileID: 3289317822683390045, guid: 83c701ae920283e4a9e729fc5f209530, type: 3}

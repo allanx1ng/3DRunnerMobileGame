@@ -16,17 +16,21 @@ public class PauseMenu : MonoBehaviour
         
     // }
 
+    public static bool isPaused;
+
     public void Pause() {
         gameObject.SetActive(true);
         gameObject.transform.parent.Find("InGameUI").gameObject.SetActive(false);
-        // PauseGame();
+        Time.timeScale = 0f;
+        isPaused = true;
     }
 
     public void Resume() {
 
         gameObject.SetActive(false);
         gameObject.transform.parent.Find("InGameUI").gameObject.SetActive(true);
-        // ResumeGame();
+        Time.timeScale = 1f;
+        isPaused = false;
     }
 
     public void Restart() {

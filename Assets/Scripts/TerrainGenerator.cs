@@ -83,7 +83,7 @@ public class TerrainGenerator : MonoBehaviour
     // Checks if the player is past the terrain
     private bool IsPlayerPastTerrain() {
         
-        return player.transform.position.z - 10 > terrains[0].transform.position.z;
+        return player.transform.position.z - 15 > terrains[0].transform.position.z;
     }
     
     // Checks if the terrain needs to be spawned

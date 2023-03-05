@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -9,8 +10,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void OpenShop() {
 
+    public void OpenShop() {
+        gameObject.transform.parent.Find("ShopUI").gameObject.SetActive(true);
+        gameObject.SetActive(false);
+
+    }
+
+    public void StartGame() {
+        gameObject.transform.parent.Find("InGameUI").gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void QuitApp()

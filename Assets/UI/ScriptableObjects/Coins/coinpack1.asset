@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: Skin 3
+  m_Name: coinpack1
   m_EditorClassIdentifier: Assembly-CSharp::ShopScriptableSO
-  title: Skin 3
-  description: Skin 3
-  baseCost: 3
+  title: coin1
+  description: coin1
+  baseCost: 1

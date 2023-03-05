@@ -7,25 +7,29 @@ public class PlayerController : MonoBehaviour
 
     public float forwardSpeed; 
     public float horizontalSpeed;
+
+    private GameObject parent;
     
     // Start is called before the first frame update
     void Start()
     {
+        parent = transform.parent.gameObject;
         initializeCameraFollow();
     }
  
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         movePlayerWithSwipe();
+        movePlayerForward();
     }
 
+    // Initializes the camera to follow the model component
     void initializeCameraFollow()
     {
         GameObject camera = GameObject.Find("Main Camera");
         Debug.Log(camera);
         camera.GetComponent<CameraFollow>().setTarget(gameObject);
-
     }
 
 
@@ -42,12 +46,19 @@ public class PlayerController : MonoBehaviour
                 Vector2 deltaPosition = touch.deltaPosition;
 
                 // Set the X and Z movement based on the delta position
-                Vector3 movement = new Vector3(deltaPosition.x, 0, 0);
+                Vector3 movement = new Vector3(deltaPosition.x, 0, 0) * horizontalSpeed;
 
                 // Move the player based on the movement and the speed
-                transform.Translate(movement * Time.deltaTime * horizontalSpeed, Space.World);
+                parent.transform.Translate(movement * Time.deltaTime, Space.World);
             }
         }
+    }
+
+    private void movePlayerForward()
+    {
+        Vector3 movement = new Vector3(0, 0, 1);
+        movement *= forwardSpeed * Time.deltaTime;
+        parent.transform.Translate(movement, Space.World);
     }
 
 

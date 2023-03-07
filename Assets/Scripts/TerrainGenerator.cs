@@ -5,7 +5,7 @@ using UnityEngine;
 public class TerrainGenerator : MonoBehaviour
 {
     private Vector3 currentPosition = new Vector3(0, 0, -5);
-    [SerializeField] private int numOfObstaclesOnRow = 5;
+    [SerializeField] private int numOfObstaclesOnRow = 3;
     // The terrain generator needs to know of the obstacle generator to generate new obstacles / delete obstacles when terrain is off screen.
     [SerializeField] private GameObject obstacleGeneratorObject;
     private ObstacleGenerator obstacleGenerator; // cached script of the obstacleGeneratorObject

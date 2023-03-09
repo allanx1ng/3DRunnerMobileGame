@@ -12,7 +12,6 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private int maxTerrainCount;
     [SerializeField] private Transform terrainHolder;
     [SerializeField] private GameObject player; // player holder
-
     [SerializeField] private List<TerrainData> terrainData = new List<TerrainData>();
 
     // List of all currently placed terrains on the scene

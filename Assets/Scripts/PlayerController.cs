@@ -13,13 +13,18 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (transform.parent == null) {
+            Debug.Log("Please child the player object under an empty game object so that it could move.");
+        }
         parent = transform.parent.gameObject;
+        
         initializeCameraFollow();
     }
  
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (parent == null) return;
         movePlayerWithSwipe();
         movePlayerForward();
     }

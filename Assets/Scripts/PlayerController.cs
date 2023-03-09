@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         camera.GetComponent<CameraFollow>().setTarget(gameObject);
     }
 
-
     // Moves the player as the user swipes the phone screen, relies on horizontalSpeed
     private void movePlayerWithSwipe()
     {
@@ -65,6 +64,9 @@ public class PlayerController : MonoBehaviour
         movement *= forwardSpeed * Time.deltaTime;
         parent.transform.Translate(movement, Space.World);
     }
-
+    
+    public float GetSpeed() {
+        return forwardSpeed;
+    }
 
 }

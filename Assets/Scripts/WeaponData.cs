@@ -16,7 +16,7 @@ public class WeaponData : ScriptableObject
     public float damage = 1f;
     public float speed = 3f;
     public float delayBetweenShots = 2f;    // the firing rate of the weapon, 2f = 2 seconds between each shot
-    public float distanceUntilDestruction = 100f;
+    public float distanceUntilDestruction = 10f;
     public float rotationSpeed = 90f;
     public float incomeMultiplier = 1f;
     public float multiplierToMobs = 1f;

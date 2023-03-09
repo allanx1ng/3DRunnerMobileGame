@@ -3281,6 +3281,7 @@ MonoBehaviour:
   - {fileID: 2087352505}
   - {fileID: 429984392}
   - {fileID: 941234697}
+  coins: 0
 --- !u!1001 &1269816920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4883,6 +4884,7 @@ GameObject:
   - component: {fileID: 1764000440}
   - component: {fileID: 1764000439}
   - component: {fileID: 1764000438}
+  - component: {fileID: 1764000442}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4975,6 +4977,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1764000442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764000437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa50424d487714735872e680539dd43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIList: []
+  coins: 0
 --- !u!1 &1840306106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,9 +5508,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 0
   coinUI: {fileID: 527215542}
-  skins: []
-  powerups: []
-  purchaseCoins: []
+  skins:
+  - {fileID: 11400000, guid: 59d2cea832ad04f6faf25b8ade039af8, type: 2}
+  - {fileID: 11400000, guid: 883e919836fe84794b949fb0a8f0e4d9, type: 2}
+  - {fileID: 11400000, guid: b9fff37111d5a4143af07c3a2c171859, type: 2}
+  powerups:
+  - {fileID: 11400000, guid: b516508f40a154b7ea0e452fbcad1a21, type: 2}
+  purchaseCoins:
+  - {fileID: 11400000, guid: 451373fa58b2449459ab066708611505, type: 2}
   shopPanels:
   - {fileID: 2012367877}
   - {fileID: 1269816922}

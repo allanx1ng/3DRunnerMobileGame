@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: Skin2
   m_EditorClassIdentifier: Assembly-CSharp::ShopScriptableSO
-  title: skin2
-  description: skin2
+  title: skin 2
+  description: skin 2
   baseCost: 2

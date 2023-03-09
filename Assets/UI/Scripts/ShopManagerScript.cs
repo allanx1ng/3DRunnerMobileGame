@@ -7,6 +7,7 @@ using TMPro;
 public class ShopManagerScript : MonoBehaviour
 {
     public int coins;
+    
     public TMP_Text coinUI;
     public ShopScriptableSO[] skins;
     public ShopScriptableSO[] powerups;
@@ -25,9 +26,14 @@ public class ShopManagerScript : MonoBehaviour
 
     public ShopMode mode;
 
+    private Initialize parentComponent;
+
+
     void Start()
     {
 
+        parentComponent = GetComponentInParent<Initialize>();
+        
         mode = ShopMode.powerups;
         Update();
         loadPanels();
@@ -36,6 +42,8 @@ public class ShopManagerScript : MonoBehaviour
 
     void Update()
     {
+        coins = parentComponent.getCoins();
+
         coinUI.text = "Coins " + coins.ToString();
     }
 
@@ -60,7 +68,7 @@ public class ShopManagerScript : MonoBehaviour
 
     public void addCoins()
     {
-        coins++;
+        parentComponent.addCoins(1);
         Update();
         checkPurchaseable();
     }
@@ -133,7 +141,7 @@ public class ShopManagerScript : MonoBehaviour
             case ShopMode.coins:
                 if (coins >= purchaseCoins[btnIndex].baseCost)
                 {
-                    coins -= purchaseCoins[btnIndex].baseCost;
+                    parentComponent.addCoins(-purchaseCoins[btnIndex].baseCost);
                     Update();
                     checkPurchaseable();
                     //unlock item 
@@ -142,7 +150,7 @@ public class ShopManagerScript : MonoBehaviour
             case ShopMode.skins:
                 if (coins >= skins[btnIndex].baseCost)
                 {
-                    coins -= skins[btnIndex].baseCost;
+                    parentComponent.addCoins(-skins[btnIndex].baseCost);
                     Update();
                     checkPurchaseable();
                     //unlock item 
@@ -151,7 +159,7 @@ public class ShopManagerScript : MonoBehaviour
             default:
                 if (coins >= powerups[btnIndex].baseCost)
                 {
-                    coins -= powerups[btnIndex].baseCost;
+                     parentComponent.addCoins(-powerups[btnIndex].baseCost);
                     Update();
                     checkPurchaseable();
                     //unlock item 

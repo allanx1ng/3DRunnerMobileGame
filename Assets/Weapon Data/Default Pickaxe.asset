@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d28cb2300961b4a900801d9308c830, type: 3}
   m_Name: Default Pickaxe
   m_EditorClassIdentifier: 
-  weaponModel: {fileID: 6244632086545348808, guid: fecd6aca62539f64799e350d03971b26, type: 3}
-  projectileModel: {fileID: 4130012511280958687, guid: b4a96fe44458b0d4fa43ecb9609959d4, type: 3}
+  weaponModel: {fileID: 5799440334007399876, guid: 22de2b5933521944d954f0ba627a11ce, type: 3}
+  projectileModel: {fileID: 117287346848941179, guid: 27ccabd65a68bda4687d47d1702cf0aa, type: 3}
   damage: 1
   speed: 3
-  firingRate: 2
-  distanceUntilDestruction: 100
+  delayBetweenShots: 2
+  distanceUntilDestruction: 25
   rotationSpeed: 90
   incomeMultiplier: 1
   multiplierToMobs: 1

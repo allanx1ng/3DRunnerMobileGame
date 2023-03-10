@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 6265252850537742272}
   m_Layer: 0
   m_Name: Generic Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1418,7 +1418,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8202364768282184341}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
@@ -1437,7 +1437,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 6150899716063342952}
-  projectileHolder: {fileID: 0}
   weaponData: {fileID: 11400000, guid: c2db0d52a3e3dbf45ab42c47f95bdc67, type: 2}
 --- !u!1 &8219295824308496846
 GameObject:

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4414859150537462116}
   - component: {fileID: 1918617314509186478}
   - component: {fileID: 7907119507078539174}
+  - component: {fileID: 4234122982069878533}
   m_Layer: 0
   m_Name: Default Pickaxe Projectile
   m_TagString: Untagged
@@ -98,3 +99,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: c2db0d52a3e3dbf45ab42c47f95bdc67, type: 2}
+  playerController: {fileID: 0}
+--- !u!65 &4234122982069878533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117287346848941179}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.16000004, z: 0.16000004}
+  m_Center: {x: 0, y: 0.07000001, z: 0.07000001}

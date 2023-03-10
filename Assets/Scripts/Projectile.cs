@@ -19,6 +19,16 @@ public class Projectile : MonoBehaviour
         DestroyIfNeeded(); // destroy after else modifies destroyed properties
     }
 
+    private void OnTriggerEnter(Collider other) {
+        GameObject otherObject = other.gameObject;
+        // Debug.Log("Hitting");
+        if (otherObject.tag == "Block") {
+            
+            Destroy(otherObject);
+        }
+
+    }
+
     private void DestroyIfNeeded() {
 
         if (distanceTravelled >= weaponData.distanceUntilDestruction) {
@@ -26,6 +36,7 @@ public class Projectile : MonoBehaviour
         }
 
     }
+
 
     private void UpdateTransforms() {
         float playerSpeed = playerController.GetSpeed();

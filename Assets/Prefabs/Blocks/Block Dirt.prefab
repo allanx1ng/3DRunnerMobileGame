@@ -148,3 +148,4 @@ MonoBehaviour:
   - {fileID: 4954296386546115329, guid: 00b29d5ef9f892949ae632606b594cea, type: 3}
   - {fileID: 7889199610090532151, guid: 70b1d36c8fdb8bb49b7333af12ee0c35, type: 3}
   - {fileID: 2644942311282073403, guid: b8aa74fae6f35424b899390e7ea9040a, type: 3}
+  effect: {fileID: 4223021209848715075, guid: 79c44fe8ae2ec7d4eaffd70478f466d5, type: 3}

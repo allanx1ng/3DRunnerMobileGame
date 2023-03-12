@@ -8,7 +8,7 @@ public class Block : MonoBehaviour
     [SerializeField] private float maxHealth = 7;
     private float currentHealth = 0;
     [SerializeField] List<GameObject> stageModels = new List<GameObject>();
-
+    [SerializeField] private GameObject effect;
     private GameObject breakingStageBlock = null;
     private int currentStage = -1; // stage of -1 means that it is not using any stageModels game objet right now
 
@@ -23,6 +23,8 @@ public class Block : MonoBehaviour
         currentHealth -= weaponData.damage;
 
         if (currentHealth <= 0) {
+
+            Instantiate(effect, gameObject.transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;
         }

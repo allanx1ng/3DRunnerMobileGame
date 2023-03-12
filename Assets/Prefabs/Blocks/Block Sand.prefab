@@ -13,12 +13,14 @@ GameObject:
   - component: {fileID: 5033006771292657023}
   - component: {fileID: 5033006771292657022}
   - component: {fileID: 5033006771292657010}
+  - component: {fileID: -6279211941177765219}
+  - component: {fileID: 2130464405588254241}
   m_Layer: 0
   m_Name: Block Sand
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5033006771292657009
 Transform:
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5033006771292657021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 98.82, y: 24.85, z: 0.6952343}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +95,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5033006771292657021}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -110,3 +112,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d751aa32431536a4c9ee5c751cfc3878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &-6279211941177765219
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033006771292657021}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &2130464405588254241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033006771292657021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980704d5bc165fc43a49a0e56667bc89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 6
+  stageModels:
+  - {fileID: 4054007555599678203, guid: 8b9a774a72a1bc64f916c66b8d1526d1, type: 3}
+  - {fileID: 7159586624414173103, guid: ff4035d73141fa14c94b4b8bbadec7c7, type: 3}
+  - {fileID: 4253544745158298969, guid: 90f5942d3f57ade40a95c8844d04cf9c, type: 3}
+  - {fileID: 4954296386546115329, guid: 00b29d5ef9f892949ae632606b594cea, type: 3}
+  - {fileID: 7889199610090532151, guid: 70b1d36c8fdb8bb49b7333af12ee0c35, type: 3}
+  - {fileID: 2644942311282073403, guid: b8aa74fae6f35424b899390e7ea9040a, type: 3}

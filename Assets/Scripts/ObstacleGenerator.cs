@@ -26,7 +26,7 @@ public class ObstacleGenerator : MonoBehaviour
         // Generate multiple obstacles centered at the given position, creating a row of obstacles on the x-axis
 
         float x = position.x;
-        float currentX = 0 - ((amount / 2) * sizeOfBlock);    
+        float currentX = 0 - (((float) amount - 1) / 2 * sizeOfBlock);    
 
         GameObject obstacleRow = new GameObject("Obstacle Row " + countOfGeneratedRows);
         obstacleRow.transform.SetPositionAndRotation(position, Quaternion.identity);

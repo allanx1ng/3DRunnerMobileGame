@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3772689514b584a874db52796a891a, type: 3}
+  m_Name: Desert
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 5243006143784268762, guid: fb8c918a63e2f0747be5559c8a48da2e, type: 3}
+  maxInSuccession: 7
+  minInSuccession: 2
+  spawnableMobs: []
+  spawnableBlocks:
+  - {fileID: 5033006771292657021, guid: 9ef22762b4c166d46b1a83e4b4b796aa, type: 3}
+  - {fileID: 3736327799343017396, guid: a025aa45e34b5254d820309fb20e6a9c, type: 3}

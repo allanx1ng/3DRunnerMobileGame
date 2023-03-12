@@ -15,8 +15,8 @@ MonoBehaviour:
   weaponModel: {fileID: 5799440334007399876, guid: 22de2b5933521944d954f0ba627a11ce, type: 3}
   projectileModel: {fileID: 117287346848941179, guid: 27ccabd65a68bda4687d47d1702cf0aa, type: 3}
   damage: 1
-  speed: 3
-  delayBetweenShots: 2
+  speed: 4
+  delayBetweenShots: 1
   distanceUntilDestruction: 25
   rotationSpeed: 90
   incomeMultiplier: 1

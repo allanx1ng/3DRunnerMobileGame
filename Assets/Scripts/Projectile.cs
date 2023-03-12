@@ -23,8 +23,9 @@ public class Projectile : MonoBehaviour
         GameObject otherObject = other.gameObject;
         // Debug.Log("Hitting");
         if (otherObject.tag == "Block") {
-            
-            Destroy(otherObject);
+            GameObject otherGameObject = other.gameObject;
+            Block blockScript = otherGameObject.GetComponent<Block>();
+            if (blockScript != null) blockScript.HandleProjectileHit(this);
         }
 
     }
@@ -52,5 +53,8 @@ public class Projectile : MonoBehaviour
         distanceTravelled += forwardDistance;
     }
 
+    public WeaponData GetWeaponData() {
+        return weaponData;
+    }
 }
 

@@ -8,7 +8,7 @@ public class MapTexture : MonoBehaviour
     private MeshFilter cubeMesh;
     private Mesh mesh;
 
-    void Start()
+    void Awake()
     {
         
         cubeMesh = GetComponent<MeshFilter>();

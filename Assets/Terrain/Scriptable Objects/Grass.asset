@@ -17,4 +17,5 @@ MonoBehaviour:
   minInSuccession: 1
   spawnableMobs: []
   spawnableBlocks:
-  - {fileID: 3289317822683390045, guid: 83c701ae920283e4a9e729fc5f209530, type: 3}
+  - {fileID: 8204475519118500303, guid: ab95dd58b5d07f34aa613707f4f5193a, type: 3}
+  - {fileID: 2424741931419714844, guid: 908310dc7f66b3f408e0df3c3bf0a12e, type: 3}

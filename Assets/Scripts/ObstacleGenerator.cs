@@ -23,10 +23,12 @@ public class ObstacleGenerator : MonoBehaviour
     }
 
     public void GenerateObstacles(Vector3 position, int amount, TerrainData terrainData) {
+        // For terrains which have no blocks
+        if (terrainData.spawnableBlocks.Count < 1) return;
+
         // Generate multiple obstacles centered at the given position, creating a row of obstacles on the x-axis
 
-        float x = position.x;
-        float currentX = 0 - (((float) amount - 1) / 2 * sizeOfBlock);    
+        float startX = 0 - (((float) amount - 1) / 2 * sizeOfBlock);    
 
         GameObject obstacleRow = new GameObject("Obstacle Row " + countOfGeneratedRows);
         obstacleRow.transform.SetPositionAndRotation(position, Quaternion.identity);
@@ -34,10 +36,12 @@ public class ObstacleGenerator : MonoBehaviour
         obstacleRows.Add(obstacleRow);
          
         for (int i = 0; i < amount; i++) {
-
+            if (Random.Range(0f, 1f) > 0.5f) continue; // placeholder for spawn block randomization 
             GameObject block = ChooseBlock(terrainData);
-            GenerateBlock(new Vector3(currentX, position.y + 3, position.z), block, obstacleRow);
-            currentX += sizeOfBlock;
+
+            float newX = startX + (i * sizeOfBlock);
+            GenerateBlock(new Vector3(newX, position.y + 3, position.z), block, obstacleRow);
+            
         }
         
         countOfGeneratedRows++;

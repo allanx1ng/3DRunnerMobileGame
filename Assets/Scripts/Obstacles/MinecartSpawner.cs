@@ -5,9 +5,9 @@ public class MinecartSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject minecartPrefab;
     
-    [SerializeField] private float spawnDistanceThreshold = 50f;
+    [SerializeField] private float spawnDistanceThreshold = 100f;
     [SerializeField] private float spawnInterval = 5f;
-    [SerializeField] private float minecartVelocity = 5f;
+    [SerializeField] private float minecartVelocity = 20f;
 
     private Renderer objectRenderer;
     private Bounds objectBounds;
@@ -17,11 +17,20 @@ public class MinecartSpawner : MonoBehaviour
     {
         objectRenderer = GetComponent<Renderer>();
         objectBounds = objectRenderer.bounds;
-        player = PlayerManager.Instance.CurrentPlayer;
 
-        StartCoroutine(SpawnMinecarts());
+        StartCoroutine(WaitForPlayerInitialization());
     }
 
+    private IEnumerator WaitForPlayerInitialization()
+    {
+        while (PlayerManager.Instance.CurrentPlayer == null)
+        {
+            yield return null;
+        }
+
+        player = PlayerManager.Instance.CurrentPlayer;
+        StartCoroutine(SpawnMinecarts());
+    }
     private IEnumerator SpawnMinecarts()
     {
         while (true)
@@ -45,6 +54,9 @@ public class MinecartSpawner : MonoBehaviour
                 minecartRigidbody.useGravity = false;
                 minecartRigidbody.velocity = new Vector3(minecartVelocity * direction, 0f, 0f);
 
+                // Set the parent of the minecart so that it will be destroyed when the terrain does.
+                minecartInstance.transform.parent = transform;
+
                 // Initialize MinecartController with the terrain Renderer
                 MinecartController minecartController = minecartInstance.GetComponent<MinecartController>();
                 if (minecartController == null)
@@ -52,6 +64,8 @@ public class MinecartSpawner : MonoBehaviour
                     minecartController = minecartInstance.AddComponent<MinecartController>();
                 }
                 minecartController.Initialize(objectRenderer);
+
+                
             }
 
             yield return new WaitForSeconds(spawnInterval);

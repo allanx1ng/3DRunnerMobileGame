@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 4798334861997916766}
   - component: {fileID: 4798334861997916767}
   - component: {fileID: 4798334861997916764}
+  - component: {fileID: 351178412}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -1515,6 +1516,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &351178412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4798334861997916765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb441bc44603ae438fbfd6d874767c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minecartPrefab: {fileID: 5090824270475337749, guid: 8dccdff6e2bdbab42897c18f4ad5b332, type: 3}
+  spawnDistanceThreshold: 50
+  spawnInterval: 5
+  minecartVelocity: 15
 --- !u!1 &5257321288037893100
 GameObject:
   m_ObjectHideFlags: 0

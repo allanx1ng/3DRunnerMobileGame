@@ -6,6 +6,7 @@ public class PlayerData
 {
     public int coins;
     public int gems;
+    public int[] items;
 
     public PlayerData(int coins, int gems)
     {

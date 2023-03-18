@@ -17,6 +17,11 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void OpenInventor() {
+        gameObject.transform.parent.Find("Inventory").gameObject.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
     public void StartGame() {
         gameObject.transform.parent.Find("InGameUI").gameObject.SetActive(true);
         gameObject.SetActive(false);

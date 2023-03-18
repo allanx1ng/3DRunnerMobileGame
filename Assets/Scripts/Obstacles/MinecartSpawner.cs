@@ -6,7 +6,8 @@ public class MinecartSpawner : MonoBehaviour
     [SerializeField] private GameObject minecartPrefab;
     
     [SerializeField] private float spawnDistanceThreshold = 100f;
-    [SerializeField] private float spawnInterval = 5f;
+    [SerializeField] private float minTime = 5f;
+    [SerializeField] private float maxTime = 15f;
     [SerializeField] private float minecartVelocity = 20f;
 
     private Renderer objectRenderer;
@@ -33,6 +34,10 @@ public class MinecartSpawner : MonoBehaviour
     }
     private IEnumerator SpawnMinecarts()
     {
+        // To start off with a random time taken to spawn a minecart, only does anything if the game starts with the player close to the terrain that spawns
+        // the minecarts.
+        yield return new WaitForSeconds(Random.Range(1f, 2f));
+
         while (true)
         {
             float distanceToPlayer = Vector3.Distance(player.transform.position, objectBounds.center);
@@ -45,7 +50,10 @@ public class MinecartSpawner : MonoBehaviour
                 float direction = spawnOnLeft ? 1f : -1f;
 
                 // Instantiate minecart and set its velocity
-                GameObject minecartInstance = Instantiate(minecartPrefab, spawnPosition, Quaternion.identity);
+                
+                Quaternion rotationQuaternion = Quaternion.AngleAxis(spawnOnLeft ? 90f : -90f, Vector3.up); // generate a rotation transform 90f or -90f depending on spawnOnLeft
+                GameObject minecartInstance = Instantiate(minecartPrefab, spawnPosition, rotationQuaternion);
+                
                 Rigidbody minecartRigidbody = minecartInstance.GetComponent<Rigidbody>();
                 if (minecartRigidbody == null)
                 {
@@ -68,7 +76,8 @@ public class MinecartSpawner : MonoBehaviour
                 
             }
 
-            yield return new WaitForSeconds(spawnInterval);
+            float seconds = Random.Range(minTime, maxTime);
+            yield return new WaitForSeconds(seconds);
         }
     }
 

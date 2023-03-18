@@ -8,6 +8,7 @@ public class ObstacleGenerator : MonoBehaviour
     // The size of the block should include the MARGIN that a block should have between other blocks
     public float sizeOfBlock = 5f;
     private int countOfGeneratedRows = 0;
+    [SerializeField] private List<ObstacleData> commonBlockData; // blocks that are spawnable in all biomes
 
     private List<GameObject> obstacleRows = new List<GameObject>();
     [SerializeField] private GameObject obstacleHolder;
@@ -64,6 +65,30 @@ public class ObstacleGenerator : MonoBehaviour
         obstacleRows.RemoveAt(0);
 
 
+    }
+
+    private float GetTotalChance(List<ObstacleData> list) {
+        float totalChance = 0f;
+        foreach(ObstacleData od in list) {
+            totalChance += od.chance;
+        }
+        return totalChance;
+    }
+
+    private ObstacleData ChooseWeightedObstacleData(List<ObstacleData> obstacleData) {
+        if (obstacleData == null || obstacleData.Count == 0) return null;
+
+        float totalChance = GetTotalChance(obstacleData);
+        float currentChance = 0f;
+        float randomNumber = Random.Range(0f, totalChance);
+        foreach (ObstacleData od in obstacleData) {
+            if (randomNumber <= currentChance) {
+                return od;
+            }
+            currentChance += od.chance;
+        }
+
+        return obstacleData[obstacleData.Count - 1];
     }
 
 

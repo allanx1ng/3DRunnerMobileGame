@@ -60,35 +60,41 @@ public class ObstacleGenerator : MonoBehaviour
     
     public void DeleteObstacleRow() {
         if (obstacleRows.Count < 1) return;
-
         Destroy(obstacleRows[0]);
         obstacleRows.RemoveAt(0);
-
-
     }
 
-    private float GetTotalChance(List<ObstacleData> list) {
+    private float GetTotalChance(params List<ObstacleData>[] list) {
         float totalChance = 0f;
-        foreach(ObstacleData od in list) {
-            totalChance += od.chance;
+
+        foreach(List<ObstacleData> odl in list) {
+            foreach (ObstacleData od in odl) {
+                totalChance += od.chance;
+            }
         }
         return totalChance;
     }
 
-    private ObstacleData ChooseWeightedObstacleData(List<ObstacleData> obstacleData) {
-        if (obstacleData == null || obstacleData.Count == 0) return null;
+    private ObstacleData ChooseWeightedObstacleData(params List<ObstacleData>[] obstacleDataArray) {
+        if (obstacleDataArray == null || obstacleDataArray.Length == 0) return null;
 
-        float totalChance = GetTotalChance(obstacleData);
+        float totalChance = GetTotalChance(obstacleDataArray);
         float currentChance = 0f;
         float randomNumber = Random.Range(0f, totalChance);
-        foreach (ObstacleData od in obstacleData) {
-            if (randomNumber <= currentChance) {
-                return od;
+        foreach (List<ObstacleData> odl in obstacleDataArray) {
+            foreach (ObstacleData od in odl) {
+                if (randomNumber <= currentChance) {
+                    return od;
+                }
+                currentChance += od.chance;
             }
-            currentChance += od.chance;
+            
         }
 
-        return obstacleData[obstacleData.Count - 1];
+        int n = obstacleDataArray.Length - 1;
+        List<ObstacleData> last = obstacleDataArray[n];
+        
+        return last[last.Count - 1];
     }
 
 

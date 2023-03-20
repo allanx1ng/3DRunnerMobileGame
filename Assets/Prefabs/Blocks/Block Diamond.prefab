@@ -141,6 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
+  gemPrefab: {fileID: 5975923016267487821, guid: 2af17849ca81413438cce8350183786c, type: 3}
+  gemCount: 5
+  gemForce: 10
+  effect: {fileID: 4223021209848715075, guid: 79c44fe8ae2ec7d4eaffd70478f466d5, type: 3}
   stageModels:
   - {fileID: 4054007555599678203, guid: 8b9a774a72a1bc64f916c66b8d1526d1, type: 3}
   - {fileID: 7159586624414173103, guid: ff4035d73141fa14c94b4b8bbadec7c7, type: 3}
@@ -148,4 +152,3 @@ MonoBehaviour:
   - {fileID: 4954296386546115329, guid: 00b29d5ef9f892949ae632606b594cea, type: 3}
   - {fileID: 7889199610090532151, guid: 70b1d36c8fdb8bb49b7333af12ee0c35, type: 3}
   - {fileID: 2644942311282073403, guid: b8aa74fae6f35424b899390e7ea9040a, type: 3}
-  effect: {fileID: 4223021209848715075, guid: 79c44fe8ae2ec7d4eaffd70478f466d5, type: 3}

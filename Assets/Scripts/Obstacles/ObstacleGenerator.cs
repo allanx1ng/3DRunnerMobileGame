@@ -7,29 +7,27 @@ public class ObstacleGenerator : MonoBehaviour
     
     // The size of the block should include the MARGIN that a block should have between other blocks
     public float sizeOfBlock = 5f;
-    private int countOfGeneratedRows = 0;
-    [SerializeField] private List<ObstacleData> commonBlockData; // blocks that are spawnable in all biomes
+    public float chanceForNothing = 85f;
+    public float chanceForMob = 10f;
+    public float chanceForBlock = 5f;
 
+    [SerializeField] private List<ObstacleData> commonBlockData = new List<ObstacleData>(); // blocks that are spawnable in all biomes
+    [SerializeField] private List<ObstacleData> commonMobData = new List<ObstacleData>();
     private List<GameObject> obstacleRows = new List<GameObject>();
     [SerializeField] private GameObject obstacleHolder;
-    private void GenerateBlock(Vector3 position, GameObject obstaclePrefab, GameObject obstacleRow) {
+    private int countOfGeneratedRows = 0;
+    private void GenerateObstacle(Vector3 position, GameObject obstaclePrefab, GameObject obstacleRow) {
         // Generate an obstacle at the given position
         
         GameObject obstacle = Instantiate(obstaclePrefab, position, Quaternion.identity);
         obstacle.transform.SetParent(obstacleRow.transform);
     }
 
-    public void GenerateMob() {
 
-    }
 
     public void GenerateObstacles(Vector3 position, int amount, TerrainData terrainData) {
-
-        // For terrains which have no blocks
         
-
         // Generate multiple obstacles centered at the given position, creating a row of obstacles on the x-axis
-
         float startX = 0 - (((float) amount - 1) / 2 * sizeOfBlock);    
 
         GameObject obstacleRow = new GameObject("Obstacle Row " + countOfGeneratedRows);
@@ -37,14 +35,28 @@ public class ObstacleGenerator : MonoBehaviour
         obstacleRow.transform.SetParent(obstacleHolder.transform);
         obstacleRows.Add(obstacleRow);
 
-        // Dont generate obstacles for objects with no children
-        if (terrainData.spawnableBlocks.Count > 0) {
-            for (int i = 0; i < amount; i++) {
-                if (Random.Range(0f, 1f) > 0.5f) continue; // placeholder for spawn block randomization 
-                GameObject block = ChooseBlock(terrainData);
+        // Chance of spawning nothing vs. block vs. mob
+        float totalChance = chanceForBlock + chanceForMob + chanceForNothing;
 
+        // Dont generate obstacles for objects with no children (roads)
+        if (terrainData.canSpawnBlocks) {
+            for (int i = 0; i < amount; i++) {
+
+                float randomNumber = Random.Range(0f, totalChance);
                 float newX = startX + (i * sizeOfBlock);
-                GenerateBlock(new Vector3(newX, position.y + 3, position.z), block, obstacleRow);
+
+                if (randomNumber <= chanceForNothing) {
+                    // do nothing
+                    continue;
+                } else if (randomNumber <= chanceForMob + chanceForNothing) {
+                    // spawn mob
+                    GameObject mob = ChooseMob(terrainData);
+                    GenerateObstacle(new Vector3(newX, position.y + 3, position.z), mob, obstacleRow);
+                } else {
+                    // spawn block
+                    GameObject block = ChooseBlock(terrainData);
+                    GenerateObstacle(new Vector3(newX, position.y + 3, position.z), block, obstacleRow);
+                }
                 
             }
         } 
@@ -53,10 +65,16 @@ public class ObstacleGenerator : MonoBehaviour
     }
 
     public GameObject ChooseBlock(TerrainData terrainData) {
-        List<GameObject> blockList = terrainData.spawnableBlocks;
-        return blockList[Random.Range(0, blockList.Count)];
+        List<ObstacleData> blockList = terrainData.spawnableBlocks;
+        ObstacleData obstacleData = ChooseWeightedObstacleData(commonBlockData, blockList);
+        return obstacleData.gameObject;
     }
 
+    public GameObject ChooseMob(TerrainData terrainData) {
+        List<ObstacleData> mobList = terrainData.spawnableMobs;
+        ObstacleData obstacleData = ChooseWeightedObstacleData(commonMobData);
+        return obstacleData.gameObject;
+    }
     
     public void DeleteObstacleRow() {
         if (obstacleRows.Count < 1) return;
@@ -83,10 +101,10 @@ public class ObstacleGenerator : MonoBehaviour
         float randomNumber = Random.Range(0f, totalChance);
         foreach (List<ObstacleData> odl in obstacleDataArray) {
             foreach (ObstacleData od in odl) {
+                currentChance += od.chance;
                 if (randomNumber <= currentChance) {
                     return od;
                 }
-                currentChance += od.chance;
             }
             
         }

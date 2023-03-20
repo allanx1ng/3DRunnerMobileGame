@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a599ffe18d89f44d8c8971253116256, type: 3}
   m_Name: Snow Block Data
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  chance: 0
+  gameObject: {fileID: 4641424593122415148, guid: 03c710c0376f63e4f849815fbcfbb363, type: 3}
+  chance: 20

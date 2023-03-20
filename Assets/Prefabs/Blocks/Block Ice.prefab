@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4437698843331080991}
   - component: {fileID: 4437698843331080976}
   - component: {fileID: 4437698843331080977}
-  - component: {fileID: 4437698843331080989}
   - component: {fileID: 4297220821611419136}
+  - component: {fileID: 4437698843331080989}
   - component: {fileID: -8582347673893556830}
   m_Layer: 0
   m_Name: Block Ice
@@ -100,18 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4437698843331080989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4437698843331080978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d751aa32431536a4c9ee5c751cfc3878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &4297220821611419136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4437698843331080989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4437698843331080978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d751aa32431536a4c9ee5c751cfc3878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-8582347673893556830
 MonoBehaviour:
   m_ObjectHideFlags: 0

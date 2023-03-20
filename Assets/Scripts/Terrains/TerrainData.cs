@@ -9,8 +9,10 @@ public class TerrainData : ScriptableObject
     public int maxInSuccession; // Number of terrains in a row of the same type
     public int minInSuccession; // min number of terrains in a row
 
+    public bool canSpawnBlocks = true;
+
     
 
-    public List<GameObject> spawnableMobs = new List<GameObject>();
-    public List<GameObject> spawnableBlocks = new List<GameObject>();
+    public List<ObstacleData> spawnableMobs = new List<ObstacleData>();
+    public List<ObstacleData> spawnableBlocks = new List<ObstacleData>();
 }

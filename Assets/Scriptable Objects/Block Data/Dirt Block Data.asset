@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Dirt Block Data
   m_EditorClassIdentifier: 
   gameObject: {fileID: 8204475519118500303, guid: ab95dd58b5d07f34aa613707f4f5193a, type: 3}
-  chance: 0
+  chance: 10

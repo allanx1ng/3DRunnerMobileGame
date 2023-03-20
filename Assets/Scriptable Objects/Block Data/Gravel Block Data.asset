@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a599ffe18d89f44d8c8971253116256, type: 3}
   m_Name: Gravel Block Data
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  chance: 0
+  gameObject: {fileID: 2546982446330279193, guid: 529e4a72a24c9444ea92e41e1fa531f0, type: 3}
+  chance: 15

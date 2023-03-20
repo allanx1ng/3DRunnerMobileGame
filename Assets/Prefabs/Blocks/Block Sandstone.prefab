@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3736327799343017401}
   - component: {fileID: 3736327799343017398}
   - component: {fileID: 3736327799343017399}
-  - component: {fileID: 3736327799343017403}
   - component: {fileID: -8362933250007519096}
+  - component: {fileID: 3736327799343017403}
   - component: {fileID: 2298286407030532686}
   m_Layer: 0
   m_Name: Block Sandstone
@@ -100,18 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3736327799343017403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3736327799343017396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d751aa32431536a4c9ee5c751cfc3878, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &-8362933250007519096
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3736327799343017403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736327799343017396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d751aa32431536a4c9ee5c751cfc3878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2298286407030532686
 MonoBehaviour:
   m_ObjectHideFlags: 0

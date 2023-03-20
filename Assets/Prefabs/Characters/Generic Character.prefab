@@ -1410,6 +1410,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 10
   horizontalSpeed: 3
+  leftBound: -7
+  rightBound: 7
 --- !u!136 &6127262574934598223
 CapsuleCollider:
   m_ObjectHideFlags: 0

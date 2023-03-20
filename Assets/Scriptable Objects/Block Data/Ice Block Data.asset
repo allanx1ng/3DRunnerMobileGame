@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a599ffe18d89f44d8c8971253116256, type: 3}
   m_Name: Ice Block Data
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  chance: 0
+  gameObject: {fileID: 4437698843331080978, guid: a7c2770d00cab454ba0f131f8a686ab1, type: 3}
+  chance: 10

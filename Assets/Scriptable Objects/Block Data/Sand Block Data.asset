@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a599ffe18d89f44d8c8971253116256, type: 3}
   m_Name: Sand Block Data
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 0}
-  chance: 0
+  gameObject: {fileID: 5033006771292657021, guid: 9ef22762b4c166d46b1a83e4b4b796aa, type: 3}
+  chance: 25

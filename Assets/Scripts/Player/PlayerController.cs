@@ -6,8 +6,14 @@ using System;
 public class PlayerController : MonoBehaviour
 {
 
+    // Player movement properties
     public float forwardSpeed; 
     public float horizontalSpeed;
+
+    // Bounds the player's horizontal movement.
+    public float leftBound = -7;
+    public float rightBound = 7;
+
 
     private GameObject parent;
     
@@ -59,10 +65,21 @@ public class PlayerController : MonoBehaviour
                 Vector2 deltaPosition = touch.deltaPosition;
 
                 // Set the X and Z movement based on the delta position
-                Vector3 movement = new Vector3(deltaPosition.x, 0, 0) * horizontalSpeed;
+                Vector3 movement = new Vector3(deltaPosition.x, 0, 0) * horizontalSpeed * Time.deltaTime;
+
+                // bound the player's movement
+                Vector3 playerPosition = transform.position;
+
+                if (movement.x + playerPosition.x > rightBound && movement.x > 0) {
+                    movement.x = rightBound - playerPosition.x;
+                }
+
+                if (movement.x + playerPosition.x < leftBound && movement.x < 0) {
+                    movement.x = leftBound - playerPosition.x;
+                }
 
                 // Move the player based on the movement and the speed
-                parent.transform.Translate(movement * Time.deltaTime, Space.World);
+                parent.transform.Translate(movement, Space.World);
             }
         }
     }

@@ -10,9 +10,7 @@ public class Block : MonoBehaviour
     private float currentHealth = 0;
 
     // Gem Emission
-    public GameObject gemPrefab;
-    private int gemCount = 2;
-    private float gemForce = 5f;
+    [SerializeField] private GameObject gemParticleSystem;
 
     // Pulsation
     private float pulsateScale = 1.1f;
@@ -37,8 +35,8 @@ public class Block : MonoBehaviour
         TakeDamageFromProjectile(weaponData);
         AdvanceBreakStageIfApplicable();
 
-        StartCoroutine(Pulsate());
-        EmitGems();
+
+        if (!pulsating) StartCoroutine(Pulsate());
 
     }
 
@@ -47,7 +45,7 @@ public class Block : MonoBehaviour
 
         if (currentHealth <= 0) {
 
-            Instantiate(effect, gameObject.transform.position, Quaternion.identity);
+            Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;
         }
@@ -75,6 +73,10 @@ public class Block : MonoBehaviour
     {
         if (pulsating) yield break;
         pulsating = true;
+
+        // doesn't look the best to be honest, commenting out for now.
+        // Instantiate(gemParticleSystem, transform.position, Quaternion.identity);
+
         Vector3 originalScale = transform.localScale;
         Vector3 targetScale = originalScale * pulsateScale;
         float t = 0;
@@ -99,19 +101,6 @@ public class Block : MonoBehaviour
 
     }
 
-    void EmitGems()
-    {
-        for (int i = 0; i < gemCount; i++)
-        {
-            GameObject gem = Instantiate(gemPrefab, transform.position, Quaternion.identity);
-            Rigidbody gemRb = gem.GetComponent<Rigidbody>();
-            Vector3 forceDirection = new Vector3(
-                Random.Range(-1f, 1f),
-                Random.Range(0.5f, 1f),
-                Random.Range(-1f, 1f)
-            ).normalized;
-            gemRb.AddForce(forceDirection * gemForce, ForceMode.Impulse);
-        }
-    }
+
 
 }

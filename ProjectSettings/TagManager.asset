@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
+  - Spaced Environment
+  - Default Environment
+  - Mob
   layers:
   - Default
   - TransparentFX

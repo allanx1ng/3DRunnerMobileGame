@@ -3,27 +3,7 @@ guid: 2d10b3c613e5295409e92c2035bcc923
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Birch Leaf
-    second: {fileID: 2100000, guid: 123c3bbc31a5d9349b9eb915007d7bdf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Birch Wood
-    second: {fileID: 2100000, guid: 81820053bbf1b0b49a8b420967868aaa, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Birch
-    second: {fileID: 2800000, guid: be3ad7b2bf9738d4b8e1fa896daa90c9, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Birch_Leaf
-    second: {fileID: 2800000, guid: 938a33c49d798ca4ca7f41a6716e7e01, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

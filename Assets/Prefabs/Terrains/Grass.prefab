@@ -112,8 +112,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftBoundary: -10
   rightBoundary: 10
-  environmentObjects: []
+  environmentObjects:
+  - {fileID: 8389720148088609379, guid: 96b74489d94a1f447b902bff17d566d7, type: 3}
+  - {fileID: 843807201719780545, guid: 1d571ec1d066146438e86eb1fb0a9e4c, type: 3}
+  - {fileID: 3419002103269034656, guid: f833013c2f574dd43a428b6f2ce1d5aa, type: 3}
+  - {fileID: 6116673476866782522, guid: 93c3c3c00f2ff7c4f8897c2aca5979d5, type: 3}
+  - {fileID: 4564282236757096137, guid: 7bd9da5c3dbf9e245ac1f14ba73608a5, type: 3}
+  - {fileID: 675539269848209450, guid: 9b5f11b9b5c4c8943bed2d1512784405, type: 3}
+  - {fileID: 239420539906475488, guid: b09d3f93bd26a84438850d52a47ac020, type: 3}
   walls:
-  - {fileID: 8014150889948445525, guid: 31cf1b9eb0f8eaf41a21ae14ed1348f5, type: 3}
-  - {fileID: 7767417413782379106, guid: 1740dd6f2e3225c46860d0031d69858b, type: 3}
-  - {fileID: 5158756362169826620, guid: 82eab881f55c41140bc466b64df37894, type: 3}
+  - {fileID: 4145551798693557762, guid: 92b110dde12e1fb49aeb5653a891ecfa, type: 3}
+  - {fileID: 1315772056153474729, guid: 1740dd6f2e3225c46860d0031d69858b, type: 3}
+  - {fileID: 7092323519358859604, guid: 82eab881f55c41140bc466b64df37894, type: 3}

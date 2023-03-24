@@ -3,17 +3,7 @@ guid: b637dfd636a1a3a4ebf0c685804217f5
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Spruce_Leaf
-    second: {fileID: 2800000, guid: 4b5c8de07e59181459cba22a6737b9e2, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Spruce_Wood
-    second: {fileID: 2800000, guid: 92273e4e1c360ab449c8ff6a78b2bc8d, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

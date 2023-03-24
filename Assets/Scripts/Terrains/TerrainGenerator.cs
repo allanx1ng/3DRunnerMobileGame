@@ -16,7 +16,7 @@ public class TerrainGenerator : MonoBehaviour
 
     // List of all currently placed terrains on the scene
     private List<GameObject> terrains = new List<GameObject>();
-
+    private GameObject prevTerrain = null;
 
     // Start is called before the first frame update
     void Start()
@@ -57,10 +57,16 @@ public class TerrainGenerator : MonoBehaviour
         for (int i = 0; i < terrainInSuccession; i++)
         {
             GameObject terrain = Instantiate(terrainData[chooseTerrain].terrain, currentPosition, Quaternion.identity);
+            
             obstacleGenerator.GenerateObstacles(currentPosition, numOfObstaclesOnRow, td);
+            
+            EnvironmentGenerator environmentGenerator = terrain.GetComponent<EnvironmentGenerator>();
+            if (environmentGenerator) environmentGenerator.SpawnEnvironment(prevTerrain);
+
             terrain.transform.SetParent(terrainHolder);
             terrains.Add(terrain);
             currentPosition.z += 5;
+            prevTerrain = terrain;
         }
         
     }

@@ -3,7 +3,27 @@ guid: 643b7b6e938f2be4caa289eaa66db115
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oak Leaf
+    second: {fileID: 2100000, guid: 989318c0d0d282a40a5b91cdb832d5aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oak Wood
+    second: {fileID: 2100000, guid: ae1ec4988ba52574caa4f03e9b94e940, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oak_Leaf
+    second: {fileID: 2800000, guid: 3eb741c9e34941c4ab1c3badd6f90608, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Oak_Wood
+    second: {fileID: 2800000, guid: 674d46215a3292a439e505c5634290d1, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

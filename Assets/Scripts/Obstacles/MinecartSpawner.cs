@@ -7,8 +7,9 @@ public class MinecartSpawner : MonoBehaviour
     
     [SerializeField] private float spawnDistanceThreshold = 100f;
     [SerializeField] private float minTime = 5f;
-    [SerializeField] private float maxTime = 15f;
+    [SerializeField] private float maxTime = 10f;
     [SerializeField] private float minecartVelocity = 20f;
+    [SerializeField] private float offsetFromEdge = 25;
 
     private Renderer objectRenderer;
     private Bounds objectBounds;
@@ -45,7 +46,7 @@ public class MinecartSpawner : MonoBehaviour
             {
                 // Determine spawn position and direction
                 bool spawnOnLeft = Random.Range(0, 2) == 0;
-                float xPos = objectBounds.center.x + (spawnOnLeft ? -objectBounds.extents.x : objectBounds.extents.x);
+                float xPos = objectBounds.center.x + (spawnOnLeft ? -objectBounds.extents.x + offsetFromEdge : objectBounds.extents.x - offsetFromEdge);
                 Vector3 spawnPosition = new Vector3(xPos, objectBounds.center.y, objectBounds.center.z);
                 float direction = spawnOnLeft ? 1f : -1f;
 

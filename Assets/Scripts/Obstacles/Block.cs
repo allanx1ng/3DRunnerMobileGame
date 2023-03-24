@@ -57,13 +57,14 @@ public class Block : MonoBehaviour
         nextStage = nextStage >= modelCount ? (int) modelCount - 1 : nextStage;
         
         if (nextStage != currentStage) {
-            if (breakingStageBlock != null) Destroy(breakingStageBlock);
             
             GameObject breakingModel = Instantiate(stageModels[nextStage]);
 
             breakingModel.transform.parent = gameObject.transform;
             breakingModel.transform.localPosition = Vector3.zero;
             breakingModel.transform.localEulerAngles = Vector3.zero;
+
+            if (breakingStageBlock != null) Destroy(breakingStageBlock);
 
             breakingStageBlock = breakingModel;
         }
@@ -97,6 +98,7 @@ public class Block : MonoBehaviour
             yield return null;
         }
         transform.localScale = originalScale;
+        if (breakingStageBlock != null) breakingStageBlock.transform.localScale = new Vector3(1f, 1f, 1f);
         pulsating = false;
 
     }

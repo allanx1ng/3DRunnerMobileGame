@@ -1443,7 +1443,7 @@ Transform:
   m_GameObject: {fileID: 4798334861997916765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 50, y: 1, z: 5}
+  m_LocalScale: {x: 100, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9156254142255130939}
@@ -1530,7 +1530,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minecartPrefab: {fileID: 5090824270475337749, guid: 8dccdff6e2bdbab42897c18f4ad5b332, type: 3}
   spawnDistanceThreshold: 50
-  spawnInterval: 5
+  minTime: 5
+  maxTime: 15
   minecartVelocity: 15
 --- !u!1 &5257321288037893100
 GameObject:

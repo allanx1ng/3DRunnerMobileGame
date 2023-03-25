@@ -112,7 +112,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftBoundary: -10
   rightBoundary: 10
-  environmentObjects: []
+  environmentObjects:
+  - {fileID: 5108965790229652938, guid: 59f2d3229fb87e04094a392f80b2cbc5, type: 3}
+  - {fileID: 8584021262705664287, guid: 756553e17b52931479fd9708baefe793, type: 3}
+  - {fileID: 2534512005467935086, guid: 76a3b7ec6cb9e6c4da361f170aee5e7f, type: 3}
   walls:
   - {fileID: 7879229182403844436, guid: 92b110dde12e1fb49aeb5653a891ecfa, type: 3}
   - {fileID: 2468032611760255212, guid: 0be5f357be0d7ab43b7bdacb51713e0c, type: 3}

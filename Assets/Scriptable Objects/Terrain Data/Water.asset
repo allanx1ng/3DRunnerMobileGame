@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   terrain: {fileID: 729552173454933256, guid: e4f544b152b2ed74e879e0e2fd053aa9, type: 3}
-  maxInSuccession: 7
-  minInSuccession: 1
+  maxInSuccession: 25
+  minInSuccession: 15
+  canSpawnBlocks: 1
   spawnableMobs: []
   spawnableBlocks:
   - {fileID: 11400000, guid: 7f6976bbc6e775743b68169fb63e932d, type: 2}

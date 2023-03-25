@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Grass
   m_EditorClassIdentifier: 
   terrain: {fileID: 4774864261041513952, guid: be43eef19794a6645b30a9b8fab92dbd, type: 3}
-  maxInSuccession: 11
-  minInSuccession: 1
+  maxInSuccession: 25
+  minInSuccession: 15
+  canSpawnBlocks: 1
   spawnableMobs: []
   spawnableBlocks:
   - {fileID: 11400000, guid: f644ca82d46ed474fb47ea7e40ae1794, type: 2}

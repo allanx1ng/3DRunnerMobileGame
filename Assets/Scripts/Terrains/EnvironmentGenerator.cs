@@ -7,8 +7,8 @@ public class EnvironmentGenerator : MonoBehaviour
 
     // How far away an environment object MUST at least be from another + its bounding box extents
     private float environmentMargin = 1f;
-    [SerializeField] private float leftBoundary = -13.5f;
-    [SerializeField] private float rightBoundary = 13.5f;
+    [SerializeField] private float leftBoundary = -15f;
+    [SerializeField] private float rightBoundary = 15f;
 
     [SerializeField] private List<GameObject> environmentObjects = new List<GameObject>();
 
@@ -93,6 +93,7 @@ public class EnvironmentGenerator : MonoBehaviour
             // float minDistanceFromObject = environmentMargin;
             if (CanSpawn(candidatePosition, minDistanceFromObject, prevTerrain)) {
                 GameObject spawnedEnvironmentObject = Instantiate(environmentObjectPrefab, candidatePosition, Quaternion.identity);
+                spawnedEnvironmentObject.tag = "Default Environment";
                 spawnedEnvironmentObject.transform.parent = transform;
             }
 

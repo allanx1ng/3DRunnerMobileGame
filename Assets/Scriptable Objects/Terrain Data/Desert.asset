@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Desert
   m_EditorClassIdentifier: 
   terrain: {fileID: 5243006143784268762, guid: fb8c918a63e2f0747be5559c8a48da2e, type: 3}
-  maxInSuccession: 7
-  minInSuccession: 2
+  maxInSuccession: 25
+  minInSuccession: 15
+  canSpawnBlocks: 1
   spawnableMobs: []
   spawnableBlocks:
   - {fileID: 11400000, guid: 3b8c088ba3cc1bf46aa796803dc205de, type: 2}

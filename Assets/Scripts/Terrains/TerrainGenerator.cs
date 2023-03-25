@@ -45,7 +45,7 @@ public class TerrainGenerator : MonoBehaviour
 
     // Spawns terrain until the maxTerrainCount is reached
     void SpawnTerrainUntilMaxTerrainCount() {
-        while (terrains.Count < maxTerrainCount)
+        while (terrains.Count < maxTerrainCount && terrainQueue.Count > 0)
         {
             DequeueRandomTerrain();
         }

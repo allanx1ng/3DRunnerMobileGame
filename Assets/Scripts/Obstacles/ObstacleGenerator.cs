@@ -18,7 +18,6 @@ public class ObstacleGenerator : MonoBehaviour
     private int countOfGeneratedRows = 0;
     private void GenerateObstacle(Vector3 position, GameObject obstaclePrefab, GameObject obstacleRow) {
         // Generate an obstacle at the given position
-        
         GameObject obstacle = Instantiate(obstaclePrefab, position, Quaternion.identity);
         obstacle.transform.SetParent(obstacleRow.transform);
     }
@@ -51,10 +50,12 @@ public class ObstacleGenerator : MonoBehaviour
                 } else if (randomNumber <= chanceForMob + chanceForNothing) {
                     // spawn mob
                     GameObject mob = ChooseMob(terrainData);
+                    mob.tag = "Mob";
                     GenerateObstacle(new Vector3(newX, position.y + 3, position.z), mob, obstacleRow);
                 } else {
                     // spawn block
                     GameObject block = ChooseBlock(terrainData);
+                    block.tag = "Block";
                     GenerateObstacle(new Vector3(newX, position.y + 3, position.z), block, obstacleRow);
                 }
                 

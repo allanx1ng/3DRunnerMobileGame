@@ -76,7 +76,7 @@ public class Block : MonoBehaviour
         pulsating = true;
 
         // doesn't look the best to be honest, commenting out for now.
-        // Instantiate(gemParticleSystem, transform.position, Quaternion.identity);
+        Instantiate(gemParticleSystem, transform.position, Quaternion.identity);
 
         Vector3 originalScale = transform.localScale;
         Vector3 targetScale = originalScale * pulsateScale;

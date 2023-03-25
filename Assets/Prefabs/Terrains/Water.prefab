@@ -110,8 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b468ff23ad55a41a0d840999dec0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftBoundary: -10
-  rightBoundary: 10
   environmentObjects:
   - {fileID: 8210668960356616471, guid: ec9a2bc5654a7ed448954fd529d29313, type: 3}
   walls:

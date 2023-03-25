@@ -111,7 +111,6 @@ public class EnvironmentGenerator : MonoBehaviour
             Bounds bounds = BoundsHelper.GetBounds(childTransform.gameObject);
             float biggerDimension = Mathf.Max(bounds.extents.x, bounds.extents.z);
             float minDistanceOverall = minDistanceFromObject + (biggerDimension * SQRT_2);
-            Debug.Log(minDistanceOverall);
             if (Vector3.Distance(childTransform.position, candidatePosition) < minDistanceOverall) return false;
         } 
 

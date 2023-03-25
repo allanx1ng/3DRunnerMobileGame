@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f3772689514b584a874db52796a891a, type: 3}
-  m_Name: Grass
+  m_Name: Tundra
   m_EditorClassIdentifier: 
-  terrain: {fileID: 4774864261041513952, guid: be43eef19794a6645b30a9b8fab92dbd, type: 3}
+  terrain: {fileID: 8517732828176596165, guid: 4f4089bdffc84e14ca7800b017a77dad, type: 3}
   maxInSuccession: 25
   minInSuccession: 15
   canSpawnBlocks: 1
   spawnableMobs: []
   spawnableBlocks:
-  - {fileID: 11400000, guid: f644ca82d46ed474fb47ea7e40ae1794, type: 2}
-  - {fileID: 11400000, guid: 33a5d307ae87e41429983914857542e9, type: 2}
+  - {fileID: 11400000, guid: f5f98f7c37ca20d4981b56227b1ca701, type: 2}
+  - {fileID: 11400000, guid: e6d1bf849f2ca2e43a1f05042cfc81f4, type: 2}

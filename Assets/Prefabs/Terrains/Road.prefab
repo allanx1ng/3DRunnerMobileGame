@@ -1533,6 +1533,7 @@ MonoBehaviour:
   minTime: 5
   maxTime: 15
   minecartVelocity: 15
+  offsetFromEdge: 25
 --- !u!1 &5257321288037893100
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
     void initializeCameraFollow()
     {
         GameObject camera = GameObject.Find("Main Camera");
-        Debug.Log(camera);
         camera.GetComponent<CameraFollow>().setTarget(gameObject);
     }
 

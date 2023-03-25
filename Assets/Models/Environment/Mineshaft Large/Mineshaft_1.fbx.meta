@@ -3,7 +3,27 @@ guid: 3aa5f8fd02aa30443afed15752ce016d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fence
+    second: {fileID: 2100000, guid: 0755ce5deb349f649b87ac4dee332e94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood Plank
+    second: {fileID: 2100000, guid: e1c2cade7257cad4d86eea612f548ba6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Fence 2x8
+    second: {fileID: 2800000, guid: eecedbad811322b48b728b6dd3a814a7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wood_Plank
+    second: {fileID: 2800000, guid: 681d849896feb824c9b8bf6c555c2f27, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

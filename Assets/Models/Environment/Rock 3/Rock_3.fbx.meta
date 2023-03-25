@@ -5,15 +5,10 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Stone
-    second: {fileID: 2100000, guid: 4fa880cbfbe51954fa4d737ca5738e8c, type: 2}
-  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Stone 2
-    second: {fileID: 2800000, guid: 38b2f4b87555185469738c9139dbf1d3, type: 3}
+    second: {fileID: 2800000, guid: 432ca1fb08a5dcc438ef647fb980676c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

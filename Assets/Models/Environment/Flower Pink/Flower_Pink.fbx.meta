@@ -3,7 +3,17 @@ guid: d2873d50688d92b4597ead2a366513f7
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pink Flower
+    second: {fileID: 2100000, guid: 1147f77a4fab9ae4ca0d850615161320, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Flower Pink
+    second: {fileID: 2800000, guid: b885b940b3a9c1a4e9f6a4b6a0ef3c16, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

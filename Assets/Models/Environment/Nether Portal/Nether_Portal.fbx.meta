@@ -3,7 +3,27 @@ guid: 1c47e1daf4d43ed4b907a42e395be86f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nether Portal Block
+    second: {fileID: 2100000, guid: cc5bcac551867274ebc52d30f8bae8ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Obsidian
+    second: {fileID: 2100000, guid: 228f56482f029d442b855dae9065b594, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nether_Portal
+    second: {fileID: 2800000, guid: 1c719175023e3be4897f92cbf07430e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Obsidian 8x8
+    second: {fileID: 2800000, guid: a61ceb1b184aced468259ebd76a1a675, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

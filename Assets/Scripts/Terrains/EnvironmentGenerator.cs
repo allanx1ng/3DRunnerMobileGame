@@ -7,14 +7,14 @@ public class EnvironmentGenerator : MonoBehaviour
 
     // How far away an environment object MUST at least be from another + its bounding box extents
     private float environmentMargin = 1f;
-    [SerializeField] private float leftBoundary = -15f;
-    [SerializeField] private float rightBoundary = 15f;
+    private float leftBoundary = -11.5f;
+    private float rightBoundary = 11.5f;
 
     [SerializeField] private List<GameObject> environmentObjects = new List<GameObject>();
 
     [SerializeField] private List<GameObject> walls = new List<GameObject>();
 
-    private int spawnAttempts = 9;
+    private int spawnAttempts = 7;
 
     private Renderer objectRenderer;
     private Bounds objectBounds;
@@ -27,12 +27,6 @@ public class EnvironmentGenerator : MonoBehaviour
         objectRenderer = GetComponent<Renderer>();
         objectBounds = objectRenderer.bounds;
         SpawnWalls();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
@@ -53,6 +47,9 @@ public class EnvironmentGenerator : MonoBehaviour
         Quaternion rightRotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0); 
         GameObject leftWall = Instantiate(walls[leftWallModel], left, leftRotation);
         GameObject rightWall = Instantiate(walls[leftWallModel], right, rightRotation);
+
+        leftWall.tag = "Default Environment";
+        rightWall.tag = "Default Environment";
 
         leftWall.transform.parent = transform;
         rightWall.transform.parent = transform;
@@ -90,7 +87,7 @@ public class EnvironmentGenerator : MonoBehaviour
 
             Bounds environmentBounds = BoundsHelper.GetBounds(environmentObjectPrefab);
             float minDistanceFromObject = Mathf.Max(environmentBounds.extents.x * SQRT_2, environmentBounds.extents.z * SQRT_2) + environmentMargin; // arbitrary choose the larger width vs length (don't look at height)
-            // float minDistanceFromObject = environmentMargin;
+
             if (CanSpawn(candidatePosition, minDistanceFromObject, prevTerrain)) {
                 GameObject spawnedEnvironmentObject = Instantiate(environmentObjectPrefab, candidatePosition, Quaternion.identity);
                 spawnedEnvironmentObject.tag = "Default Environment";
@@ -126,8 +123,6 @@ public class EnvironmentGenerator : MonoBehaviour
             float minDistanceOverall = minDistanceFromObject + (biggerDimension * SQRT_2);
             if (Vector3.Distance(childTransform.position, candidatePosition) < minDistanceOverall) return false;
         }
-
-        
 
         return true;
     }

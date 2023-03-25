@@ -18,6 +18,10 @@ public class TerrainGenerator : MonoBehaviour
     private List<GameObject> terrains = new List<GameObject>();
     private GameObject prevTerrain = null;
 
+    private Queue<TerrainData> terrainQueue = new Queue<TerrainData>();
+    private int minTerrainQueueSize = 10;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,7 @@ public class TerrainGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EnqueueRandomTerrain();
         SpawnTerrainUntilMaxTerrainCount();
         DeleteTerrain();
     }
@@ -42,33 +47,38 @@ public class TerrainGenerator : MonoBehaviour
     void SpawnTerrainUntilMaxTerrainCount() {
         while (terrains.Count < maxTerrainCount)
         {
-            SpawnRandomTerrain();
+            DequeueRandomTerrain();
         }
     }
 
-    /// <summary>
-    /// Spawns a random terrain at the current position
-    /// </summary>
-    private void SpawnRandomTerrain()
-    {
+    // Enqueues random terrain data to the queue if the queue is small enough
+    private void EnqueueRandomTerrain() {
+        if (terrainQueue.Count >= minTerrainQueueSize) return;
+
         int chooseTerrain = Random.Range(0, terrainData.Count);
         TerrainData td = terrainData[chooseTerrain];
         int terrainInSuccession = Random.Range(td.minInSuccession > 0 ? td.minInSuccession : 1, td.maxInSuccession);
-        for (int i = 0; i < terrainInSuccession; i++)
-        {
-            GameObject terrain = Instantiate(terrainData[chooseTerrain].terrain, currentPosition, Quaternion.identity);
-            
-            obstacleGenerator.GenerateObstacles(currentPosition, numOfObstaclesOnRow, td);
-            
-            EnvironmentGenerator environmentGenerator = terrain.GetComponent<EnvironmentGenerator>();
-            if (environmentGenerator) environmentGenerator.SpawnEnvironment(prevTerrain);
-
-            terrain.transform.SetParent(terrainHolder);
-            terrains.Add(terrain);
-            currentPosition.z += 5;
-            prevTerrain = terrain;
+        for (int i = 0; i < terrainInSuccession; i++) {
+            terrainQueue.Enqueue(td);
         }
+
+    }
+
+    // Spawns in a random terrain by dequeuing the queue
+    private void DequeueRandomTerrain() {
+
+        TerrainData td = terrainQueue.Dequeue();
+        GameObject terrain = Instantiate(td.terrain, currentPosition, Quaternion.identity);
+            
+        obstacleGenerator.GenerateObstacles(currentPosition, numOfObstaclesOnRow, td);
         
+        EnvironmentGenerator environmentGenerator = terrain.GetComponent<EnvironmentGenerator>();
+        if (environmentGenerator) environmentGenerator.SpawnEnvironment(prevTerrain);
+
+        terrain.transform.SetParent(terrainHolder);
+        terrains.Add(terrain);
+        currentPosition.z += 5;
+        prevTerrain = terrain;
     }
 
     /// <summary>

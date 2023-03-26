@@ -7,8 +7,8 @@ public class EnvironmentGenerator : MonoBehaviour
 
     // How far away an environment object MUST at least be from another + its bounding box extents
     private float environmentMargin = 1f;
-    private float leftBoundary = -11.5f;
-    private float rightBoundary = 11.5f;
+    private float leftBoundary = -10f;
+    private float rightBoundary = 10f;
 
     [SerializeField] private List<GameObject> environmentObjects = new List<GameObject>();
 
@@ -43,8 +43,8 @@ public class EnvironmentGenerator : MonoBehaviour
         right.x += rightBoundary;
         right.y = 1f;
 
-        Quaternion leftRotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0); 
-        Quaternion rightRotation = Quaternion.Euler(0, Random.Range(0, 4) * 90, 0); 
+        Quaternion leftRotation = Quaternion.Euler(0, 0, 0); 
+        Quaternion rightRotation = Quaternion.Euler(0, 0, 0); 
         GameObject leftWall = Instantiate(walls[leftWallModel], left, leftRotation);
         GameObject rightWall = Instantiate(walls[leftWallModel], right, rightRotation);
 

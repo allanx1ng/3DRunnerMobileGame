@@ -115,6 +115,4 @@ MonoBehaviour:
   - {fileID: 8584021262705664287, guid: 756553e17b52931479fd9708baefe793, type: 3}
   - {fileID: 2534512005467935086, guid: 76a3b7ec6cb9e6c4da361f170aee5e7f, type: 3}
   walls:
-  - {fileID: 7879229182403844436, guid: 92b110dde12e1fb49aeb5653a891ecfa, type: 3}
-  - {fileID: 2468032611760255212, guid: 0be5f357be0d7ab43b7bdacb51713e0c, type: 3}
-  - {fileID: 6177261707246287608, guid: 82eab881f55c41140bc466b64df37894, type: 3}
+  - {fileID: 733741003069321737, guid: f023d1f2e86cbb4468833d2629cb4f2c, type: 3}

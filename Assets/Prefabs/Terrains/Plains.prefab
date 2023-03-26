@@ -120,6 +120,4 @@ MonoBehaviour:
   - {fileID: 6153525087432985793, guid: 93c3c3c00f2ff7c4f8897c2aca5979d5, type: 3}
   - {fileID: 3760473803610324770, guid: 9ea9da64e460f694e9a69b713dd16614, type: 3}
   walls:
-  - {fileID: 7879229182403844436, guid: 92b110dde12e1fb49aeb5653a891ecfa, type: 3}
-  - {fileID: 2468032611760255212, guid: 0be5f357be0d7ab43b7bdacb51713e0c, type: 3}
-  - {fileID: 6177261707246287608, guid: 82eab881f55c41140bc466b64df37894, type: 3}
+  - {fileID: 733741003069321737, guid: f023d1f2e86cbb4468833d2629cb4f2c, type: 3}

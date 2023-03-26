@@ -113,6 +113,4 @@ MonoBehaviour:
   environmentObjects:
   - {fileID: 8210668960356616471, guid: ec9a2bc5654a7ed448954fd529d29313, type: 3}
   walls:
-  - {fileID: 7879229182403844436, guid: 92b110dde12e1fb49aeb5653a891ecfa, type: 3}
-  - {fileID: 2468032611760255212, guid: 0be5f357be0d7ab43b7bdacb51713e0c, type: 3}
-  - {fileID: 6177261707246287608, guid: 82eab881f55c41140bc466b64df37894, type: 3}
+  - {fileID: 733741003069321737, guid: f023d1f2e86cbb4468833d2629cb4f2c, type: 3}

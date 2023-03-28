@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a599ffe18d89f44d8c8971253116256, type: 3}
-  m_Name: Gold Block Data
+  m_Name: Diamond Block Data
   m_EditorClassIdentifier: 
-  gameObject: {fileID: 3790224217072351195, guid: 42a5f246f1a01467990fd8514babc049, type: 3}
+  gameObject: {fileID: 9198587200757764623, guid: 68e6d496db7594b6c9efadfa2a036915, type: 3}
   chance: 1.25

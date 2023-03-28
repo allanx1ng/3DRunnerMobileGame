@@ -12,7 +12,7 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private int maxTerrainCount;
     [SerializeField] private Transform terrainHolder;
     [SerializeField] private GameObject player; // player holder
-    [SerializeField] private List<TerrainData> terrainData = new List<TerrainData>();
+    [SerializeField] private List<TerrainData> terrainData = new List<TerrainData>(); // make sure this does not have any transition terrainDatas in here
 
     // List of all currently placed terrains on the scene
     private List<GameObject> terrains = new List<GameObject>();
@@ -58,8 +58,20 @@ public class TerrainGenerator : MonoBehaviour
         int chooseTerrain = Random.Range(0, terrainData.Count);
         TerrainData td = terrainData[chooseTerrain];
         int terrainInSuccession = Random.Range(td.minInSuccession > 0 ? td.minInSuccession : 1, td.maxInSuccession);
+
+        // for entering
+        if (td.entranceTerrainData != null) {
+            terrainQueue.Enqueue(td.entranceTerrainData);
+        }
+
         for (int i = 0; i < terrainInSuccession; i++) {
             terrainQueue.Enqueue(td);
+        }
+
+
+        // for exiting
+        if (td.entranceTerrainData != null) {
+            terrainQueue.Enqueue(td.entranceTerrainData);
         }
 
     }

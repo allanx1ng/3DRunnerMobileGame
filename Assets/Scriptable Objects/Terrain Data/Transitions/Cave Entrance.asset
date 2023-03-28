@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3772689514b584a874db52796a891a, type: 3}
+  m_Name: Cave Entrance
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 386512865580595686, guid: 772f749a71ba2fe43be43c762c9f7b9d, type: 3}
+  entranceTerrainData: {fileID: 0}
+  maxInSuccession: 0
+  minInSuccession: 0
+  canSpawnBlocks: 0
+  spawnableMobs: []
+  spawnableBlocks: []

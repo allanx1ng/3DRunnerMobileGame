@@ -12,9 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3772689514b584a874db52796a891a, type: 3}
   m_Name: Cave
   m_EditorClassIdentifier: 
-  terrain: {fileID: 4774864261041513952, guid: be43eef19794a6645b30a9b8fab92dbd, type: 3}
-  maxInSuccession: 0
-  minInSuccession: 0
+  terrain: {fileID: 5607577920253939126, guid: 6087c6f6083e7b84d9940208f19812ed, type: 3}
+  entranceTerrainData: {fileID: 11400000, guid: 3775245c07987e0499d9f10c46ce13ab, type: 2}
+  maxInSuccession: 20
+  minInSuccession: 40
   canSpawnBlocks: 1
   spawnableMobs: []
-  spawnableBlocks: []
+  spawnableBlocks:
+  - {fileID: 11400000, guid: 13f19bdea599dc448b0fe156086bfafa, type: 2}
+  - {fileID: 11400000, guid: 73b8c9591601d9247b6de36f7c18243c, type: 2}
+  - {fileID: 11400000, guid: 3b00bf76a8f226a44a238bf973909921, type: 2}
+  - {fileID: 11400000, guid: 1deb81de2e9394545aaa3f07c280dcde, type: 2}
+  - {fileID: 11400000, guid: 780dfa819da945f4a8253761de1daf6e, type: 2}
+  - {fileID: 11400000, guid: ded1eaaeed518294aab2a289d5c637d9, type: 2}

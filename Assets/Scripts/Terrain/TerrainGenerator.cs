@@ -22,6 +22,9 @@ public class TerrainGenerator : MonoBehaviour
     private int minTerrainQueueSize = 10;
 
 
+    [SerializeField] private GameObject transitionTrigger;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,10 +71,9 @@ public class TerrainGenerator : MonoBehaviour
             terrainQueue.Enqueue(td);
         }
 
-
         // for exiting
-        if (td.entranceTerrainData != null) {
-            terrainQueue.Enqueue(td.entranceTerrainData);
+        if (td.exitTerrainData != null) {
+            terrainQueue.Enqueue(td.exitTerrainData);
         }
 
     }
@@ -81,6 +83,16 @@ public class TerrainGenerator : MonoBehaviour
 
         TerrainData td = terrainQueue.Dequeue();
         GameObject terrain = Instantiate(td.terrain, currentPosition, Quaternion.identity);
+
+        if (td.isTransitionTerrain == true) {
+            
+            GameObject transitionObject = Instantiate(transitionTrigger, currentPosition, Quaternion.identity);
+            transitionObject.transform.parent = terrain.transform;
+
+            TerrainTransition terrainTransitionScript = transitionObject.AddComponent<TerrainTransition>();
+            InitializeTransitionScript(terrainTransitionScript, td);
+        }
+
             
         obstacleGenerator.GenerateObstacles(currentPosition, numOfObstaclesOnRow, td);
         
@@ -106,6 +118,17 @@ public class TerrainGenerator : MonoBehaviour
             obstacleGenerator.DeleteObstacleRow();
         }
 
+    }
+
+    private void InitializeTransitionScript(TerrainTransition terrainTransitionScript, TerrainData td) {
+        switch (td.transitionType) {
+            case TerrainData.TERRAIN_CAVE_ENTRANCE:
+                terrainTransitionScript.Initialize(LightingConstants.CAVE);
+                break;
+            case TerrainData.TERRAIN_CAVE_EXIT:
+                terrainTransitionScript.Initialize(LightingConstants.DEFAULT);
+                break;
+        }
     }
 
     // Checks if the player is past the terrain

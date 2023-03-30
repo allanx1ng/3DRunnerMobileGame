@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrain: {fileID: 5607577920253939126, guid: 6087c6f6083e7b84d9940208f19812ed, type: 3}
   entranceTerrainData: {fileID: 11400000, guid: 3775245c07987e0499d9f10c46ce13ab, type: 2}
+  exitTerrainData: {fileID: 11400000, guid: 83793eebb5ac4d24486bdf6970dbc8cb, type: 2}
   maxInSuccession: 20
   minInSuccession: 40
   canSpawnBlocks: 1
@@ -25,3 +26,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1deb81de2e9394545aaa3f07c280dcde, type: 2}
   - {fileID: 11400000, guid: 780dfa819da945f4a8253761de1daf6e, type: 2}
   - {fileID: 11400000, guid: ded1eaaeed518294aab2a289d5c637d9, type: 2}
+  isTransitionTerrain: 0
+  transitionType: 

@@ -6,7 +6,7 @@ public class LightingConstants : MonoBehaviour
 {
    public static LightingStruct DEFAULT;
    public static LightingStruct CAVE = new LightingStruct(
-      new Color(0.15f, 0.15f, 0.15f),
+      new Color(0.11f, 0.11f, 0.11f),
       new Color(1f, 1f, 1f),
       0.0f
    );

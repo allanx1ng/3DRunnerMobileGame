@@ -10,8 +10,8 @@ public class TerrainData : ScriptableObject
     public TerrainData entranceTerrainData; // this object is responsible for transitioning lighting, etc upon entering a different biome.
     public TerrainData exitTerrainData;
 
-    public int maxInSuccession; // Number of terrains in a row of the same type
-    public int minInSuccession; // min number of terrains in a row
+    public int maxInSuccession = 30; // Number of terrains in a row of the same type
+    public int minInSuccession = 10; // min number of terrains in a row
 
     public bool canSpawnBlocks = true;
     public List<ObstacleData> spawnableMobs = new List<ObstacleData>();

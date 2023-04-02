@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3772689514b584a874db52796a891a, type: 3}
+  m_Name: Jungle
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 5306402306040781787, guid: c86c0d4a65667a148a49ab7a3d5441ac, type: 3}
+  entranceTerrainData: {fileID: 0}
+  exitTerrainData: {fileID: 0}
+  maxInSuccession: 25
+  minInSuccession: 10
+  canSpawnBlocks: 1
+  spawnableMobs: []
+  spawnableBlocks: []
+  isTransitionTerrain: 0
+  transitionType: 

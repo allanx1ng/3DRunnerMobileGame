@@ -110,6 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b468ff23ad55a41a0d840999dec0e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentObjects: []
+  environmentObjects:
+  - {fileID: 6361407997350474131, guid: 1f7c398bc74502049b51633fe7940271, type: 3}
+  - {fileID: 5807099190766763464, guid: 8c25bed4333d744449ea0df7ef4a6284, type: 3}
   walls:
   - {fileID: 733741003069321737, guid: f023d1f2e86cbb4468833d2629cb4f2c, type: 3}

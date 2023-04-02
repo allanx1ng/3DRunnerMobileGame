@@ -14,7 +14,7 @@ public class EnvironmentGenerator : MonoBehaviour
 
     [SerializeField] private List<GameObject> walls = new List<GameObject>();
 
-    private int spawnAttempts = 7;
+    [SerializeField] private int spawnAttempts = 6;
 
     private Renderer objectRenderer;
     private Bounds objectBounds;
@@ -107,7 +107,7 @@ public class EnvironmentGenerator : MonoBehaviour
 
         // loop through each of the previous terrain's children and check if they are spaced enough apart
         foreach (Transform childTransform in prevTerrain.transform) {
-            if (childTransform.gameObject.tag != "Default Environment") continue;
+            if (childTransform.gameObject.CompareTag("Default Environment")) continue;
             Bounds bounds = BoundsHelper.GetBounds(childTransform.gameObject);
             float biggerDimension = Mathf.Max(bounds.extents.x, bounds.extents.z);
             float minDistanceOverall = minDistanceFromObject + (biggerDimension * SQRT_2);
@@ -116,7 +116,7 @@ public class EnvironmentGenerator : MonoBehaviour
 
         // loop through all of the current terrain's children (what env objects are already spawned)
         foreach (Transform childTransform in transform) {
-            if (childTransform.gameObject.tag != "Default Environment") continue;
+            if (childTransform.gameObject.CompareTag("Default Environment")) continue;
             Bounds bounds = BoundsHelper.GetBounds(childTransform.gameObject);
             float biggerDimension = Mathf.Max(bounds.extents.x, bounds.extents.z);
             float minDistanceOverall = minDistanceFromObject + (biggerDimension * SQRT_2);

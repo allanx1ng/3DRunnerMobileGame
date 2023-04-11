@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         GameObject otherObject = other.gameObject;
-        // Debug.Log("Hitting");
+
         if (otherObject.tag == "Block") {
             GameObject otherGameObject = other.gameObject;
             Block blockScript = otherGameObject.GetComponent<Block>();

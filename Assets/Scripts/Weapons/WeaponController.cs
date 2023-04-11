@@ -6,9 +6,7 @@ public class WeaponController : MonoBehaviour
 {
     [SerializeField] private GameObject weaponHolder;
     [SerializeField] private WeaponData weaponData;
-
     private GameObject projectileHolder;
-
     private List<GameObject> projectiles = new List<GameObject>();
     float timer = 0f;
 

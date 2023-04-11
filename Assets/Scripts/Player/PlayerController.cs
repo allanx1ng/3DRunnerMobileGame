@@ -89,6 +89,14 @@ public class PlayerController : MonoBehaviour
         movement *= forwardSpeed * Time.deltaTime;
         parent.transform.Translate(movement, Space.World);
     }
+    private void OnTriggerEnter(Collider other) {
+        GameObject otherObject = other.gameObject;
+        
+        if (other.CompareTag("Enemy Projectile")) {
+            Debug.Log("Hit Player");
+        }
+
+    }
     
     public float GetSpeed() {
         return forwardSpeed;

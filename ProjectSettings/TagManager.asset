@@ -8,6 +8,7 @@ TagManager:
   - Spaced Environment
   - Default Environment
   - Mob
+  - Enemy Projectile
   layers:
   - Default
   - TransparentFX

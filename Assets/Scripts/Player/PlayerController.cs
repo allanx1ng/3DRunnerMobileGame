@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float leftBound = -7;
     public float rightBound = 7;
 
+    private int health = 3;
 
     private GameObject parent;
     
@@ -30,7 +31,9 @@ public class PlayerController : MonoBehaviour
         if (transform.parent == null) {
             Debug.Log("Please child the player object under an empty game object so that it could move.");
         }
+
         parent = transform.parent.gameObject;
+        parent.tag = "Player";
 
         
         initializeCameraFollow();
@@ -89,11 +92,16 @@ public class PlayerController : MonoBehaviour
         movement *= forwardSpeed * Time.deltaTime;
         parent.transform.Translate(movement, Space.World);
     }
-    private void OnTriggerEnter(Collider other) {
-        GameObject otherObject = other.gameObject;
-        
-        if (other.CompareTag("Enemy Projectile")) {
-            Debug.Log("Hit Player");
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        UIManager.Instance.UpdateHearts(health);
+
+        if (health <= 0)
+        {
+            // end game, bring up main menu, etc   
         }
 
     }

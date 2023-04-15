@@ -18,7 +18,8 @@ public class ObstacleGenerator : MonoBehaviour
     private int countOfGeneratedRows = 0;
     private void GenerateObstacle(Vector3 position, GameObject obstaclePrefab, GameObject obstacleRow) {
         // Generate an obstacle at the given position
-        GameObject obstacle = Instantiate(obstaclePrefab, position, Quaternion.identity);
+        Quaternion rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f)); // face backwards
+        GameObject obstacle = Instantiate(obstaclePrefab, position, rotation);
         obstacle.transform.SetParent(obstacleRow.transform);
     }
 

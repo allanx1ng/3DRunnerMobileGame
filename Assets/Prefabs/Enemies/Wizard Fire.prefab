@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 2870442231265841939}
   m_Layer: 0
   m_Name: Wizard Fire
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603a080ceabbeba4cb4bb3533a6f07af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wd: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 085584d6c53190a4f8b9eb7ec5954718, type: 2}
 --- !u!1 &6442028269681586481
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +794,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6582320913002642830}
-  m_LocalRotation: {x: -0.55188245, y: -0.44088283, z: 0.5568075, w: -0.43705082}
+  m_LocalRotation: {x: -0.5518825, y: -0.44088286, z: 0.5568076, w: -0.43705085}
   m_LocalPosition: {x: 1.9988897, y: 2.2751434, z: -0.018131796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

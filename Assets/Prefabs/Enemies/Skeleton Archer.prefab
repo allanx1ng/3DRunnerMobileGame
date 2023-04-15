@@ -1057,7 +1057,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 5f29d89a1d715224c9ddf4fb6b939248, type: 2}
-  isMelee: 0
 --- !u!1 &7635381634003276617
 GameObject:
   m_ObjectHideFlags: 0

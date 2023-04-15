@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90d28cb2300961b4a900801d9308c830, type: 3}
-  m_Name: Lightning Bolt
+  m_Name: Waterball
   m_EditorClassIdentifier: 
   weaponModel: {fileID: 0}
-  projectileModel: {fileID: 4274082992613574, guid: 56f714edddb0bde40b6de02c677d5954, type: 3}
+  projectileModel: {fileID: 1775982204794291727, guid: d6127e5a273d99f48bed81c692693f08, type: 3}
   projectilePosition: {x: 0, y: 0, z: 0}
-  projectileRotation: {x: 0, y: 90, z: 0}
+  projectileRotation: {x: 90, y: 0, z: 0}
   damage: 1
   speed: 10
   delayBetweenShots: 1

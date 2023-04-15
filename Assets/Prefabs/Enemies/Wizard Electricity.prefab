@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 879317119203738437}
   m_Layer: 0
   m_Name: Wizard Electricity
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603a080ceabbeba4cb4bb3533a6f07af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
+  weaponData: {fileID: 11400000, guid: 75b6c417aa37ba54380c4b214c0b8400, type: 2}
 --- !u!1 &3027301698213768387
 GameObject:
   m_ObjectHideFlags: 0

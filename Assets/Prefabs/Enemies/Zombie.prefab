@@ -196,7 +196,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
-  isMelee: 1
 --- !u!1 &1440821491544449978
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,6 @@ using UnityEngine;
 public class ObstacleData : ScriptableObject
 {
     public GameObject gameObject; // The obstacle GameObject
-    public float chance; // The chance of the obstacle spawning
+    public float chance = 10f; // The chance of the obstacle spawning
     
 }

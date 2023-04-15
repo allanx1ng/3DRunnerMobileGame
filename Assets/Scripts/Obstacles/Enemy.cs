@@ -5,13 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public WeaponData weaponData;
-    private float spawnInterval = 5f;
-    [SerializeField] private bool isMelee = false;
+    // [SerializeField] private bool isMelee = false;
 
     void Start()
     {
         gameObject.tag = "Mob"; // set to enemy
-        if (!isMelee) StartCoroutine(SpawnProjectile());
+        if (weaponData) StartCoroutine(SpawnProjectile());
     }
 
     IEnumerator SpawnProjectile()

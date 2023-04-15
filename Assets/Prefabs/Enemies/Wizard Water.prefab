@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603a080ceabbeba4cb4bb3533a6f07af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wd: {fileID: 0}
+  weaponData: {fileID: 0}
 --- !u!1 &2693568192321152375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1151,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8238382535852266426}
-  m_LocalRotation: {x: -0.11989859, y: 0.009130763, z: 0.007483188, w: 0.99271595}
+  m_LocalRotation: {x: -0.119898595, y: 0.009130763, z: 0.0074831885, w: 0.99271595}
   m_LocalPosition: {x: -0.000000004304545, y: 4.116198, z: -0.000000062028526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1170,9 +1170,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8629185244297541143}
   - component: {fileID: 2387236101855669357}
+  - component: {fileID: 1519553116}
   m_Layer: 0
   m_Name: Wizard Water
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1214,6 +1215,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1519553116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974221526150016173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603a080ceabbeba4cb4bb3533a6f07af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 45fea89f9de4e6f4fb2bcb4c3e015574, type: 2}
 --- !u!1 &9173480199507152886
 GameObject:
   m_ObjectHideFlags: 0

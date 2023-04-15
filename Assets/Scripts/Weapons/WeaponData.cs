@@ -22,8 +22,8 @@ public class WeaponData : ScriptableObject
     [Header("Main Stats (Shared Enemy & Player)")]
     // Projectile Stats
     public float damage = 1f;
-    public float speed = 3f;
-    public float delayBetweenShots = 2f;    // the firing rate of the weapon, 2f = 2 seconds between each shot
+    public float speed = 10f;
+    public float delayBetweenShots = 1f;    // the firing rate of the weapon, 2f = 2 seconds between each shot
     public float distanceUntilDestruction = 10f;
 
 

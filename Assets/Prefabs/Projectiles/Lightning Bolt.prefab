@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1950009372292434195}
   - component: {fileID: 144044862797220265}
   m_Layer: 0
-  m_Name: Projectile_Electro
+  m_Name: Lightning Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4274082992613574}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1

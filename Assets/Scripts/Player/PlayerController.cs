@@ -86,6 +86,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void AddCoins(int coins) {
+        CoinManager.Instance.AddCoins(coins);
+    }
+
     private void movePlayerForward()
     {
         Vector3 movement = new Vector3(0, 0, 1);

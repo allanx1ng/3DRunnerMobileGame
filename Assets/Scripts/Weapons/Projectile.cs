@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         if (otherObject.tag == "Block") {
             GameObject otherGameObject = other.gameObject;
             Block blockScript = otherGameObject.GetComponent<Block>();
-            if (blockScript != null) blockScript.HandleProjectileHit(this);
+            if (blockScript != null) blockScript.HandleProjectileHit(this, playerController);
             Destroy(gameObject);
         }
 

@@ -22,7 +22,7 @@ public class Initialize : MonoBehaviour
     {
         
         for (int i = 0; i<UIList.Length;i++) {
-            if (UIList[i].name == "Panel") {
+            if (UIList[i].name == "Main Menu") {
                 UIList[i].SetActive(true);
             } else {
                 UIList[i].SetActive(false);

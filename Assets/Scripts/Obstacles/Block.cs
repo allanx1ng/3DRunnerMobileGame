@@ -28,19 +28,19 @@ public class Block : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void HandleProjectileHit(Projectile projectileScript) {
+    public void HandleProjectileHit(Projectile projectileScript, PlayerController playerController) {
 
         WeaponData weaponData = projectileScript.GetWeaponData();
 
-        TakeDamageFromProjectile(weaponData);
+        TakeDamageFromProjectile(weaponData, playerController);
         AdvanceBreakStageIfApplicable();
-
 
         if (!pulsating) StartCoroutine(Pulsate());
 
     }
 
-    private void TakeDamageFromProjectile(WeaponData weaponData) {
+    private void TakeDamageFromProjectile(WeaponData weaponData, PlayerController playerController) {
+        
         currentHealth -= weaponData.damage;
 
         if (currentHealth <= 0) {
@@ -49,6 +49,8 @@ public class Block : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        playerController.AddCoins(1);
+        
     }
 
     private void AdvanceBreakStageIfApplicable() {

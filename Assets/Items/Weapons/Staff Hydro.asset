@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a87445bf446841b18c1e7a41defa340, type: 3}
+  m_Name: Staff Hydro
+  m_EditorClassIdentifier: 
+  itemName: Hydro Staff
+  itemID: 6
+  description: A magical staff that harnesses the power of water to cast spells on
+    a large group of enemies. Not effective against terrain.
+  baseCost: 0
+  isOwned: 0
+  isEquipped: 0
+  damageToMobs: 3
+  damageToBlocks: 0
+  icon: {fileID: 21300000, guid: 55b1b3c44b9134855951da323259ec08, type: 3}

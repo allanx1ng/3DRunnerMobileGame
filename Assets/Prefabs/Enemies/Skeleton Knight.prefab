@@ -457,9 +457,10 @@ GameObject:
   - component: {fileID: 3422588776449158427}
   - component: {fileID: 8763818573358462817}
   - component: {fileID: 1649888410104855090}
+  - component: {fileID: 6325052325182489844}
   m_Layer: 0
   m_Name: Skeleton Knight
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,7 +515,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
-  isMelee: 1
+--- !u!136 &6325052325182489844
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2608898063377233825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.5
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 20, z: 0}
 --- !u!1 &2878015365767238906
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class EnemyProjectile : MonoBehaviour
         GameObject playerObject = ObjectHelper.FindAncestorWithTag(other.gameObject, "Player");
         
         if (playerObject != null && playerObject.CompareTag("Player")) {
-            Debug.Log("Hit Player");
+            Debug.Log("Projectile Hit Player");
             PlayerController playerController = playerObject.GetComponent<PlayerController>();
             if (playerController) playerController.TakeDamage(1);
         }

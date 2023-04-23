@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 6697755974851171484}
   - component: {fileID: 725951754117369574}
   - component: {fileID: 2870442231265841939}
+  - component: {fileID: 4437743835159042692}
   m_Layer: 0
   m_Name: Wizard Fire
   m_TagString: Mob
@@ -739,6 +740,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 085584d6c53190a4f8b9eb7ec5954718, type: 2}
+--- !u!136 &4437743835159042692
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321054132336676390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.5
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 20, z: 0}
 --- !u!1 &6442028269681586481
 GameObject:
   m_ObjectHideFlags: 0

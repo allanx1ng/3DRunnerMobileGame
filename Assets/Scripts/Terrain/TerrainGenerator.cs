@@ -128,6 +128,12 @@ public class TerrainGenerator : MonoBehaviour
             case TerrainData.TERRAIN_CAVE_EXIT:
                 terrainTransitionScript.Initialize(LightingConstants.DEFAULT);
                 break;
+            case TerrainData.TERRAIN_HELL_ENTRANCE:
+                terrainTransitionScript.Initialize(LightingConstants.HELL);
+                break;
+            case TerrainData.TERRAIN_HELL_EXIT:
+                terrainTransitionScript.Initialize(LightingConstants.DEFAULT);
+                break;
         }
     }
 

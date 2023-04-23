@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 1977478682722228827}
   - component: {fileID: 5589326360174460961}
   - component: {fileID: 8637837682628952390}
+  - component: {fileID: 8326447087902137481}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Mob
@@ -196,6 +197,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+--- !u!136 &8326447087902137481
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169452447586877665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.5
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 20, z: 0}
 --- !u!1 &1440821491544449978
 GameObject:
   m_ObjectHideFlags: 0

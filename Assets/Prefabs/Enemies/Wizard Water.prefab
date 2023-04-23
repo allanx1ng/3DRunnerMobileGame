@@ -1171,6 +1171,7 @@ GameObject:
   - component: {fileID: 8629185244297541143}
   - component: {fileID: 2387236101855669357}
   - component: {fileID: 1519553116}
+  - component: {fileID: 2291621419314192322}
   m_Layer: 0
   m_Name: Wizard Water
   m_TagString: Mob
@@ -1228,6 +1229,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 45fea89f9de4e6f4fb2bcb4c3e015574, type: 2}
+--- !u!136 &2291621419314192322
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974221526150016173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.5
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 20, z: 0}
 --- !u!1 &9173480199507152886
 GameObject:
   m_ObjectHideFlags: 0

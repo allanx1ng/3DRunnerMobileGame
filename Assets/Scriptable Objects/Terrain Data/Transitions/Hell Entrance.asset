@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f3772689514b584a874db52796a891a, type: 3}
-  m_Name: Hell
+  m_Name: Hell Entrance
   m_EditorClassIdentifier: 
-  terrain: {fileID: 8493246023889516065, guid: 785aeae60feaee641b8de32aa0dfc58a, type: 3}
-  entranceTerrainData: {fileID: 11400000, guid: 23f33989d9a8c3a4cb9a4f4495bbd34e, type: 2}
-  exitTerrainData: {fileID: 11400000, guid: af0b3af582d9376449a4055a6caf9e3f, type: 2}
-  maxInSuccession: 45
-  minInSuccession: 20
-  canSpawnBlocks: 1
+  terrain: {fileID: 1079003213682664262, guid: efd9c5ee4f96a624f9b8250d29999134, type: 3}
+  entranceTerrainData: {fileID: 0}
+  exitTerrainData: {fileID: 0}
+  maxInSuccession: 0
+  minInSuccession: 0
+  canSpawnBlocks: 0
   spawnableMobs: []
   spawnableBlocks: []
-  isTransitionTerrain: 0
-  transitionType: 
+  isTransitionTerrain: 1
+  transitionType: HELL ENTRANCE

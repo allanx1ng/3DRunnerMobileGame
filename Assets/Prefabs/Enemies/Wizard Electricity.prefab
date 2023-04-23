@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 2489535372458349858}
   - component: {fileID: 8389282445934694232}
   - component: {fileID: 879317119203738437}
+  - component: {fileID: 4515736913015950631}
   m_Layer: 0
   m_Name: Wizard Electricity
   m_TagString: Mob
@@ -702,6 +703,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 75b6c417aa37ba54380c4b214c0b8400, type: 2}
+--- !u!136 &4515736913015950631
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3010457990812012440}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.5
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 20, z: 0}
 --- !u!1 &3027301698213768387
 GameObject:
   m_ObjectHideFlags: 0

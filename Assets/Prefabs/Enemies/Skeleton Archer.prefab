@@ -1000,6 +1000,7 @@ GameObject:
   - component: {fileID: 7810306230322902756}
   - component: {fileID: 4216465422303063198}
   - component: {fileID: 1091814629588065737}
+  - component: {fileID: 5999061817434807233}
   m_Layer: 0
   m_Name: Skeleton Archer
   m_TagString: Mob
@@ -1057,6 +1058,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 5f29d89a1d715224c9ddf4fb6b939248, type: 2}
+--- !u!136 &5999061817434807233
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7433218183808085086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.5
+  m_Height: 40
+  m_Direction: 1
+  m_Center: {x: 0, y: 20, z: 0}
 --- !u!1 &7635381634003276617
 GameObject:
   m_ObjectHideFlags: 0

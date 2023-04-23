@@ -11,6 +11,12 @@ public class LightingConstants : MonoBehaviour
       0.0f
    );
 
+   public static LightingStruct HELL = new LightingStruct(
+      new Color(0.6f, 0.3f, 0.3f),
+      new Color(1f, 1f, 1f),
+      0.2f
+   );
+
    public static bool initialized = false;
    public void Awake() {
       if (initialized) return;
@@ -22,7 +28,6 @@ public class LightingConstants : MonoBehaviour
          RenderSettings.sun.intensity
       );
 
-      Debug.Log(RenderSettings.ambientLight.r);
 
       DontDestroyOnLoad(gameObject);
    }

@@ -24,5 +24,8 @@ public class TerrainData : ScriptableObject
     public const string TERRAIN_CAVE_ENTRANCE = "CAVE ENTRANCE";
     public const string TERRAIN_CAVE_EXIT = "CAVE EXIT";
 
+    public const string TERRAIN_HELL_ENTRANCE = "HELL ENTRANCE";
+    public const string TERRAIN_HELL_EXIT = "HELL EXIT";
+
 
 }

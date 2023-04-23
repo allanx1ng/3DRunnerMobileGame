@@ -3,7 +3,18 @@ using UnityEngine;
 
 public class LightingManager : MonoBehaviour
 {
+
+    public static LightingManager Instance;
     private Coroutine currentTransitionCoroutine;
+
+    public void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Debug.LogError("Multiple lighting managers");
+            Destroy(gameObject);
+        }
+    }
 
     public void TransitionAmbientLight(LightingStruct targetLighting, float duration)
     {

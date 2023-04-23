@@ -13,6 +13,7 @@ public class CoinManager : MonoBehaviour
         if (Instance == null) {
             Instance = this;
             // Probably do something about setting the coins from the saved json file here
+            
         } else {
             Debug.LogError("Multiple instances of UIManager detected. Destroying the duplicate.");
             Destroy(gameObject);

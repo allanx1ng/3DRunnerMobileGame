@@ -31,13 +31,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        GameObject playerObject = ObjectHelper.FindAncestorWithTag(other.gameObject, "Player");
-
-        if (playerObject != null && playerObject.CompareTag("Player")) {
-            Debug.Log("Enemy hit Player");
-            PlayerController playerController = playerObject.GetComponent<PlayerController>();
-            if (playerController) playerController.TakeDamage(1);
-        }
+    void OnTriggerEnter(Collider otherCollider) {
+        PlayerManager.Instance.DamagePlayerIfHit(otherCollider);
     }
 }

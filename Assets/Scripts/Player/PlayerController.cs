@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0)
         {
-            // end game, bring up main menu, etc   
+            UIManager.Instance.ToggleDeathMenu(true);   
         }
 
     }

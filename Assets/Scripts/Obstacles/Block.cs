@@ -105,6 +105,9 @@ public class Block : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter(Collider otherCollider) {
+        PlayerManager.Instance.DamagePlayerIfHit(otherCollider);
+    }
 
 
 }

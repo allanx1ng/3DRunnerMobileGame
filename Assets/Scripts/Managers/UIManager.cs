@@ -13,11 +13,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
 
+    public GameObject deathMenuObject;
+
+    [Header("Menu Instances")]
+    private DeathMenu deathMenu;
+
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            deathMenu = deathMenuObject.GetComponent<DeathMenu>();
         }
         else
         {
@@ -41,4 +48,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ToggleDeathMenu(bool state) {
+        deathMenu.ToggleDeathMenu(state);
+    }
 }

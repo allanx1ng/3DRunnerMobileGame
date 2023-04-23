@@ -28,14 +28,8 @@ public class EnemyProjectile : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other) {
-        GameObject playerObject = ObjectHelper.FindAncestorWithTag(other.gameObject, "Player");
-        
-        if (playerObject != null && playerObject.CompareTag("Player")) {
-            Debug.Log("Projectile Hit Player");
-            PlayerController playerController = playerObject.GetComponent<PlayerController>();
-            if (playerController) playerController.TakeDamage(1);
-        }
+    private void OnTriggerEnter(Collider otherCollider) {
+        PlayerManager.Instance.DamagePlayerIfHit(otherCollider);
 
     }
     private void UpdateTransforms() {

@@ -15,7 +15,7 @@ public class TerrainTransition : MonoBehaviour
 
     private void Start()
     {
-        lightingManager = FindObjectOfType<LightingManager>();
+        lightingManager = LightingManager.Instance;
         if (lightingManager == null)
         {
             Debug.LogError("LightingManager not found in the scene.");

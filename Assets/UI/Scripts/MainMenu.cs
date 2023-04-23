@@ -23,9 +23,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void StartGame() {
-        gameObject.transform.parent.Find("InGameUI").gameObject.SetActive(true);
         gameObject.SetActive(false);
-    
         GoToScene("Game Scene");
     }
 

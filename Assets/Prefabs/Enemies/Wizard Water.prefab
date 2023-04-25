@@ -296,7 +296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1986052739898825214}
   - component: {fileID: 2699465810264622696}
-  - component: {fileID: 5903886792675949506}
   m_Layer: 0
   m_Name: Cube.455
   m_TagString: Untagged
@@ -412,19 +411,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.37880135, y: 1.7187414, z: 0.5013802}
     m_Extent: {x: 20.700905, y: 21.453098, z: 8.235247}
   m_DirtyAABB: 0
---- !u!114 &5903886792675949506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2563895737946477027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603a080ceabbeba4cb4bb3533a6f07af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
 --- !u!1 &2693568192321152375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,6 +1215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 45fea89f9de4e6f4fb2bcb4c3e015574, type: 2}
+  redPulseMaterial: {fileID: 2100000, guid: 3f625113d9c57fc4cbc70fc78faaecf2, type: 2}
 --- !u!136 &2291621419314192322
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1237,7 +1224,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8974221526150016173}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 7.5
   m_Height: 40

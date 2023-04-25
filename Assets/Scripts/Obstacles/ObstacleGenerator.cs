@@ -52,7 +52,7 @@ public class ObstacleGenerator : MonoBehaviour
                     // spawn mob
                     GameObject mob = ChooseMob(terrainData);
                     mob.tag = "Mob";
-                    GenerateObstacle(new Vector3(newX, position.y + 3, position.z), mob, obstacleRow);
+                    GenerateObstacle(new Vector3(newX, position.y + 1, position.z), mob, obstacleRow);
                 } else {
                     // spawn block
                     GameObject block = ChooseBlock(terrainData);

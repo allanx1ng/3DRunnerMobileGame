@@ -29,6 +29,14 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (otherObject.tag == "Mob") {
+            GameObject otherGameObject = other.gameObject;
+            Enemy enemyScript = otherGameObject.GetComponent<Enemy>();
+            
+            if (enemyScript) enemyScript.HandleProjectileHit(this, playerController);
+            Destroy(gameObject);
+        }
+
     }
 
     private void DestroyIfNeeded() {

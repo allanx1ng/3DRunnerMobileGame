@@ -1058,6 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 5f29d89a1d715224c9ddf4fb6b939248, type: 2}
+  redPulseMaterial: {fileID: 2100000, guid: 3f625113d9c57fc4cbc70fc78faaecf2, type: 2}
 --- !u!136 &5999061817434807233
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1066,7 +1067,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7433218183808085086}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 7.5
   m_Height: 40

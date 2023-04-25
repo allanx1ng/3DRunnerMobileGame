@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 0}
+  redPulseMaterial: {fileID: 2100000, guid: 3f625113d9c57fc4cbc70fc78faaecf2, type: 2}
 --- !u!136 &6325052325182489844
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -523,7 +524,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2608898063377233825}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 7.5
   m_Height: 40

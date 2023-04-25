@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 085584d6c53190a4f8b9eb7ec5954718, type: 2}
-  redPulseMaterial: {fileID: 2100000, guid: 3f625113d9c57fc4cbc70fc78faaecf2, type: 2}
+  redOverlayMaterial: {fileID: 2100000, guid: 3f625113d9c57fc4cbc70fc78faaecf2, type: 2}
 --- !u!136 &4437743835159042692
 CapsuleCollider:
   m_ObjectHideFlags: 0

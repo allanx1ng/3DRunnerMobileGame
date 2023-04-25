@@ -5,21 +5,27 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public WeaponData weaponData;
-    [SerializeField] private Material redPulseMaterial;
-    private float pulseDuration = 0.5f;
+    [SerializeField] private Material redOverlayMaterial;
+    private float pulseDuration = 0.15f;
     private Renderer characterRenderer;
-    private Material originalMaterial;
+    private Material[] originalMaterials;
 
     void Start()
     {
         characterRenderer = transform.GetChild(0).GetComponent<Renderer>();
-        originalMaterial = characterRenderer.material;
+        originalMaterials = characterRenderer.materials;
         if (weaponData) StartCoroutine(SpawnProjectile());
     }
     public IEnumerator ApplyRedPulse() {
-        characterRenderer.material = redPulseMaterial;
+        Material[] redMaterials = new Material[originalMaterials.Length];
+        for (int i = 0; i < redMaterials.Length; i++)
+        {
+            redMaterials[i] = redOverlayMaterial;
+        }
+        characterRenderer.materials = redMaterials;
+        
         yield return new WaitForSeconds(pulseDuration);
-        characterRenderer.material = originalMaterial;
+        characterRenderer.materials = originalMaterials;
     }
 
     public void HandleProjectileHit(Projectile projectile, PlayerController playerController) {

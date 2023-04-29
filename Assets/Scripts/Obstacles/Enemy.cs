@@ -6,6 +6,10 @@ public class Enemy : MonoBehaviour
 {
     public WeaponData weaponData;
     [SerializeField] private Material redOverlayMaterial;
+
+    [SerializeField] private float enemyHealth = 5; // Add this line to define the enemy's health
+    [SerializeField] private GameObject deathEffect;
+
     private float pulseDuration = 0.15f;
     private Renderer characterRenderer;
     private Material[] originalMaterials;
@@ -30,6 +34,8 @@ public class Enemy : MonoBehaviour
 
     public void HandleProjectileHit(Projectile projectile, PlayerController playerController) {
         StartCoroutine(ApplyRedPulse());
+
+        TakeDamage(projectile.weaponData.damage);
     }
 
     IEnumerator SpawnProjectile()
@@ -52,5 +58,17 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider otherCollider) {
         PlayerManager.Instance.DamagePlayerIfHit(otherCollider);
+    }
+
+    // Add this method to handle taking damage
+    public void TakeDamage(float damage)
+    {
+        enemyHealth -= damage;
+
+        if (enemyHealth <= 0)
+        {
+            Instantiate(deathEffect, transform.position + new Vector3(0f, 4f, 0f), Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

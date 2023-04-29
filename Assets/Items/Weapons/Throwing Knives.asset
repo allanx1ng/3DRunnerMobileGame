@@ -16,7 +16,7 @@ MonoBehaviour:
   itemID: 8
   description: A set of sharp knives that can be thrown at enemies to deal quick,
     precise damage from a distance. Not very effective against terrain.
-  baseCost: 0
+  baseCost: 10
   isOwned: 0
   isEquipped: 0
   damageToMobs: 5

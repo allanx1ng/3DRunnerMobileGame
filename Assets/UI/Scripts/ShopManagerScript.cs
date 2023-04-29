@@ -7,20 +7,15 @@ using TMPro;
 public class ShopManagerScript : MonoBehaviour
 {
     public int coins;
-    
-    public TMP_Text coinUI;
-    public ShopScriptableSO[] skins;
-    public ShopScriptableSO[] powerups;
-    public ShopScriptableSO[] purchaseCoins;
 
-    public ShopTemplate[] shopPanels;
-    public GameObject[] shopPanelsSO;
-    public Button[] myPurchaseBtns;
+    public TMP_Text coinUI;
+    public List<Weapon> weapons;
+    public GameObject ShopWeaponTemplate;
 
     public enum ShopMode
     {
         coins,
-        powerups,
+        weapons,
         skins
     }
 
@@ -33,18 +28,17 @@ public class ShopManagerScript : MonoBehaviour
     {
 
         parentComponent = GetComponentInParent<Initialize>();
-        
-        mode = ShopMode.powerups;
-        Update();
-        loadPanels();
-        checkPurchaseable();
+
+        mode = ShopMode.weapons;
+        UpdateShop();
     }
 
-    void Update()
+    void UpdateShop()
     {
         coins = parentComponent.getCoins();
 
         coinUI.text = "Coins " + coins.ToString();
+        loadPanels();
     }
 
     public void switchToCoins()
@@ -61,7 +55,7 @@ public class ShopManagerScript : MonoBehaviour
     }
     public void switchToPowerUps()
     {
-        mode = ShopMode.powerups;
+        mode = ShopMode.weapons;
         loadPanels();
 
     }
@@ -69,99 +63,40 @@ public class ShopManagerScript : MonoBehaviour
     public void addCoins()
     {
         parentComponent.addCoins(1);
-        Update();
-        checkPurchaseable();
+        UpdateShop();
     }
 
     void setAllTemplatesFalse()
     {
-        for (int i = 0; i < shopPanelsSO.Length; i++)
-            shopPanelsSO[i].SetActive(false);
-    }
-
-    public void checkPurchaseable()
-    {
-
-
-        switch (mode)
+        Transform parentObject = ShopWeaponTemplate.transform.parent;
+        Debug.Log(parentComponent.name);
+        for (int i = 0; i < parentObject.transform.childCount; i++)
         {
-            case ShopMode.coins:
-                for (int i = 0; i < purchaseCoins.Length; i++)
-                {
-                    if (coins >= purchaseCoins[i].baseCost)
-                    {
-                        myPurchaseBtns[i].interactable = true;
-                    }
-                    else
-                    {
-                        myPurchaseBtns[i].interactable = false;
-                    }
-
-
-                }
-                break;
-            case ShopMode.skins:
-                for (int i = 0; i < skins.Length; i++)
-                {
-                    if (coins >= skins[i].baseCost)
-                    {
-                        myPurchaseBtns[i].interactable = true;
-                    }
-                    else
-                    {
-                        myPurchaseBtns[i].interactable = false;
-                    }
-
-
-                }
-                break;
-            default:
-                for (int i = 0; i < powerups.Length; i++)
-                {
-                    if (coins >= powerups[i].baseCost)
-                    {
-                        myPurchaseBtns[i].interactable = true;
-                    }
-                    else
-                    {
-                        myPurchaseBtns[i].interactable = false;
-                    }
-
-
-                }
-                break;
+            Transform child2 = parentObject.transform.GetChild(i);
+            if (child2.name.Contains("Item Template(Clone)"))
+            {
+                Destroy(child2.gameObject);
+            }
         }
     }
 
-    public void purchaseItem(int btnIndex)
+    public void purchaseItem(int i, int price)
     {
 
         switch (mode)
         {
             case ShopMode.coins:
-                if (coins >= purchaseCoins[btnIndex].baseCost)
-                {
-                    parentComponent.addCoins(-purchaseCoins[btnIndex].baseCost);
-                    Update();
-                    checkPurchaseable();
-                    //unlock item 
-                }
+                //
                 break;
             case ShopMode.skins:
-                if (coins >= skins[btnIndex].baseCost)
-                {
-                    parentComponent.addCoins(-skins[btnIndex].baseCost);
-                    Update();
-                    checkPurchaseable();
-                    //unlock item 
-                }
+                //
                 break;
             default:
-                if (coins >= powerups[btnIndex].baseCost)
+                if (coins >= price)
                 {
-                     parentComponent.addCoins(-powerups[btnIndex].baseCost);
-                    Update();
-                    checkPurchaseable();
+                    parentComponent.addCoins(-price);
+                    weapons[i].isOwned = true;
+                    UpdateShop();
                     //unlock item 
                 }
                 break;
@@ -177,40 +112,43 @@ public class ShopManagerScript : MonoBehaviour
         switch (mode)
         {
             case ShopMode.coins:
+                gameObject.transform.Find("ScrollRectWeapons").gameObject.SetActive(false);
+                gameObject.transform.Find("ScrollRectSkins").gameObject.SetActive(false);
+                gameObject.transform.Find("ScrollRectCoins").gameObject.SetActive(true);
 
-                for (int i = 0; i < purchaseCoins.Length; i++)
-                    shopPanelsSO[i].SetActive(true);
 
-                for (int i = 0; i < purchaseCoins.Length; i++)
-                {
-                    shopPanels[i].titleTxt.text = purchaseCoins[i].title;
-                    shopPanels[i].descriptionTxt.text = purchaseCoins[i].description;
-                    shopPanels[i].costTxt.text = "Coins " + purchaseCoins[i].baseCost.ToString();
-                }
+                //
                 break;
             case ShopMode.skins:
-
-                for (int i = 0; i < skins.Length; i++)
-                    shopPanelsSO[i].SetActive(true);
-
-                for (int i = 0; i < skins.Length; i++)
-                {
-                    shopPanels[i].titleTxt.text = skins[i].title;
-                    shopPanels[i].descriptionTxt.text = skins[i].description;
-                    shopPanels[i].costTxt.text = "Coins " + skins[i].baseCost.ToString();
-                }
+                gameObject.transform.Find("ScrollRectWeapons").gameObject.SetActive(false);
+                gameObject.transform.Find("ScrollRectSkins").gameObject.SetActive(true);
+                gameObject.transform.Find("ScrollRectCoins").gameObject.SetActive(false);
+                //
                 break;
             default:
 
-                for (int i = 0; i < powerups.Length; i++)
-                    shopPanelsSO[i].SetActive(true);
+                gameObject.transform.Find("ScrollRectWeapons").gameObject.SetActive(true);
+                gameObject.transform.Find("ScrollRectSkins").gameObject.SetActive(false);
+                gameObject.transform.Find("ScrollRectCoins").gameObject.SetActive(false);
 
 
-                for (int i = 0; i < powerups.Length; i++)
+                for (int i = 0; i < weapons.Count; i++)
                 {
-                    shopPanels[i].titleTxt.text = powerups[i].title;
-                    shopPanels[i].descriptionTxt.text = powerups[i].description;
-                    shopPanels[i].costTxt.text = "Coins " + powerups[i].baseCost.ToString();
+                    if (!weapons[i].isOwned)
+                    {
+                        GameObject duplicatedElement = Instantiate(ShopWeaponTemplate, ShopWeaponTemplate.transform.parent);
+                        duplicatedElement.transform.SetSiblingIndex(ShopWeaponTemplate.transform.GetSiblingIndex() + 1); // set the position of the duplicated element to be right after the original element
+                        duplicatedElement.SetActive(true);
+                        Transform Panel = duplicatedElement.transform;
+                        Panel.Find("Title").GetComponent<TMP_Text>().text = weapons[i].itemName;
+                        Panel.Find("Description").GetComponent<TMP_Text>().text =
+                        weapons[i].description + "\n\n" + "Damage to mobs: " + weapons[i].damageToMobs + "\n\n" + "Damage to blocks: " + weapons[i].damageToBlocks;
+                        Panel.Find("Price").GetComponent<TMP_Text>().text = weapons[i].baseCost.ToString();
+                        int index = i;
+                        int price = weapons[i].baseCost;
+                        Panel.Find("Purchase").GetComponent<Button>().onClick.AddListener(() => purchaseItem(index, price));
+                    }
+
                 }
                 break;
         }

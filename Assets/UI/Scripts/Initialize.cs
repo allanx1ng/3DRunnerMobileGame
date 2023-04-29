@@ -78,10 +78,14 @@ public class Initialize : MonoBehaviour
         items = data.getItems();
         Debug.Log(items);
 
+        for(int i = 0; i<weapons.Length; i++) {
+            weapons[i].isOwned = false; 
+        }
+
         for (int i = 0; i<items.Length; i++) {
             int j = items[i];
-            Debug.Log(j);
-            weapons[j].isOwned = true;
+            Weapon w = weapons[j];
+            w.isOwned = true;
         }
     }
     public int getCoins() {
@@ -94,7 +98,14 @@ public class Initialize : MonoBehaviour
     }
 
     public int[] getItems() {
-        return items;
+        List<int> tempList = new List<int>();
+        for (int i = 0; i<weapons.Length; i++) {
+            if (weapons[i].isOwned) {
+                tempList.Add(weapons[i].itemID);
+            }
+        }
+        int[] tempArr = tempList.ToArray();
+        return tempArr;
     }
 
 

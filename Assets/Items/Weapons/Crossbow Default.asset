@@ -16,8 +16,8 @@ MonoBehaviour:
   itemID: 0
   description: A ranged weapon that fires bolts with great accuracy and power, dealing
     heavy damage to enemies, but not very effective against terrain.
-  baseCost: 0
-  isOwned: 0
+  baseCost: 10
+  isOwned: 1
   isEquipped: 0
   damageToMobs: 4
   damageToBlocks: 1

@@ -60,6 +60,12 @@ public class Inventory : MonoBehaviour
         
     }
 
+    public void openInventory() {
+        gameObject.transform.parent.Find("Panel").gameObject.SetActive(false);
+        gameObject.SetActive(true);
+        loadPanels();
+    }
+
     public void loadPanels()
     {
         DuplicatePowerUpElement();
@@ -86,6 +92,13 @@ public class Inventory : MonoBehaviour
                 Panel.Find("Description").GetComponent<TMP_Text>().text =
                 weapons[i].description + "\n\n" + "Damage to mobs: " + weapons[i].damageToMobs + "\n\n" + "Damage to blocks: " + weapons[i].damageToBlocks;
                 Panel.Find("Image").GetComponent<Image>().sprite = weapons[i].icon;
+                int j = weapons[i].itemID;
+                Panel.Find("Equip").Find("Button").GetComponent<Button>().onClick.AddListener(() => EquipWeapon(j));
+                if (weapons[i].isEquipped) {
+                    Panel.Find("Equip").GetComponent<Toggle>().isOn = true;
+                } else {
+                    Panel.Find("Equip").GetComponent<Toggle>().isOn = false;
+                }
             }
 
         }
@@ -112,5 +125,19 @@ public class Inventory : MonoBehaviour
                 Destroy(child2.gameObject);
             }
         }
+    }
+
+    // equips weapon based on item id
+    public void EquipWeapon(int a) {
+        for (int i = 0; i<weapons.Length; i++) {
+            Debug.Log(a);
+            if(weapons[i].itemID == a) {
+                weapons[i].isEquipped = true;
+            } else {
+                weapons[i].isEquipped = false;
+            }
+        }
+        closePanels();
+        loadPanels();
     }
 }

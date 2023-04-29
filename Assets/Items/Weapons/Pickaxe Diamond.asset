@@ -16,7 +16,7 @@ MonoBehaviour:
   itemID: 2
   description: An advanced pickaxe made of diamond that can mine through even the
     toughest rocks and harvest resources with ease.
-  baseCost: 0
+  baseCost: 10
   isOwned: 0
   isEquipped: 0
   damageToMobs: 4

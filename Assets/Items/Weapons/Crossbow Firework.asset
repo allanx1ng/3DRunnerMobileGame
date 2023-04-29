@@ -16,7 +16,7 @@ MonoBehaviour:
   itemID: 1
   description: A crossbow that fires explosive bolts that deal damage to multiple
     enemies at once and also damaging terrain.
-  baseCost: 0
+  baseCost: 10
   isOwned: 0
   isEquipped: 0
   damageToMobs: 5

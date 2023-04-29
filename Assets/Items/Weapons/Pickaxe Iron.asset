@@ -16,7 +16,7 @@ MonoBehaviour:
   itemID: 3
   description: A sturdy pickaxe made of iron that can be used to mine through harder
     rocks and harvest resources more efficiently.
-  baseCost: 0
+  baseCost: 10
   isOwned: 0
   isEquipped: 0
   damageToMobs: 2

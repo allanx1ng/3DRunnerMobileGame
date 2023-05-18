@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a87445bf446841b18c1e7a41defa340, type: 3}
+  m_Name: Crossbow Default
+  m_EditorClassIdentifier: 
+  itemName: Crossbow
+  itemID: 0
+  description: A ranged weapon that fires bolts with great accuracy and power, dealing
+    heavy damage to enemies, but not very effective against terrain.
+  baseCost: 10
+  isOwned: 1
+  isEquipped: 0
+  damageToMobs: 4
+  damageToBlocks: 1
+  icon: {fileID: 21300000, guid: 8b4774ba2c1b04e90bdd133f072f967f, type: 3}

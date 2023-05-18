@@ -158,7 +158,7 @@ public class ShopManagerScript : MonoBehaviour
     public void closeShop()
     {
         switchToPowerUps();
-        gameObject.transform.parent.Find("Panel").gameObject.SetActive(true);
+        gameObject.transform.parent.Find("Main Menu").gameObject.SetActive(true);
         gameObject.SetActive(false);
     }
 

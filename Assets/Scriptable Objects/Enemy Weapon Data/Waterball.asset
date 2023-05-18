@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponModel: {fileID: 0}
   projectileModel: {fileID: 1775982204794291727, guid: d6127e5a273d99f48bed81c692693f08, type: 3}
-  projectilePosition: {x: 0, y: 0, z: 0}
+  projectilePosition: {x: 0, y: 2.5, z: 0}
   projectileRotation: {x: 90, y: 0, z: 0}
   damage: 1
   speed: 10
-  delayBetweenShots: 1
+  delayBetweenShots: 1.5
   distanceUntilDestruction: 10
   rotationSpeed: 90
   incomeMultiplier: 1

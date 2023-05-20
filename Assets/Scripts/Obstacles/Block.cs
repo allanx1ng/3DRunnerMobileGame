@@ -59,7 +59,7 @@ public class Block : MonoBehaviour
         nextStage = nextStage >= modelCount ? (int) modelCount - 1 : nextStage;
         
         if (nextStage != currentStage) {
-            
+            Debug.Log(nextStage);
             GameObject breakingModel = Instantiate(stageModels[nextStage]);
 
             breakingModel.transform.parent = gameObject.transform;
@@ -69,6 +69,7 @@ public class Block : MonoBehaviour
             if (breakingStageBlock != null) Destroy(breakingStageBlock);
 
             breakingStageBlock = breakingModel;
+            currentStage = nextStage;
         }
     }
 

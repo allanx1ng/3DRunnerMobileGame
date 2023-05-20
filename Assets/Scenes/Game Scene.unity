@@ -477,9 +477,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeOfBlock: 5
-  chanceForNothing: 91
-  chanceForMob: 4
-  chanceForBlock: 5
+  chanceForNothing: 40
+  chanceForMob: 5
+  chanceForBlock: 55
   commonBlockData:
   - {fileID: 11400000, guid: ded1eaaeed518294aab2a289d5c637d9, type: 2}
   - {fileID: 11400000, guid: 0934cbfd183a47f4c9b4754a36f123d2, type: 2}

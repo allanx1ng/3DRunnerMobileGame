@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         enemyHealth -= damage;
+        CoinManager.Instance.AddCoins((int) damage);
 
         if (enemyHealth <= 0)
         {

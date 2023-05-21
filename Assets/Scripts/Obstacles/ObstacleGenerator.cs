@@ -59,16 +59,22 @@ public class ObstacleGenerator : MonoBehaviour
                 spawnRowCluster(startX, amount, terrainData, position, obstacleRow);
                 clusterIndex++;
             } else {
-                // reset the indices
-                clusterIndex = 0;
-                marginIndex = 0;
-
-                currentSizeCluster = Random.Range(MIN_SIZE_CLUSTER, MAX_SIZE_CLUSTER + 1);
-                currentSizeMargin = Random.Range(MIN_SIZE_MARGIN, MAX_SIZE_MARGIN + 1);
+                resetIndices();
             }
-        } 
+        } else {
+            resetIndices();
+        }
         
         countOfGeneratedRows++;
+    }
+
+    private void resetIndices() {
+        // reset the indices
+        clusterIndex = 0;
+        marginIndex = 0;
+
+        currentSizeCluster = Random.Range(MIN_SIZE_CLUSTER, MAX_SIZE_CLUSTER + 1);
+        currentSizeMargin = Random.Range(MIN_SIZE_MARGIN, MAX_SIZE_MARGIN + 1);
     }
 
     private void spawnRowCluster(float startX, int amount, TerrainData terrainData, Vector3 position, GameObject obstacleRow) {

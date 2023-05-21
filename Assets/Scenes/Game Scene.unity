@@ -476,10 +476,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64299d330d9d3c34fbaab26b1b2bd3a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawningComment: This handles the spawning behaviour of the obstacles, the minimum
+    and maximum distance between clusters, and size of clusters
+  ChanceComment: Inbetween clusters, there will be areas of empty space in the margins.
+    Here it can spawn things based on these probabilities
   sizeOfBlock: 5
-  chanceForNothing: 40
-  chanceForMob: 5
-  chanceForBlock: 55
+  chanceForNothing: 80
+  chanceForMob: 10
+  chanceForBlock: 10
   commonBlockData:
   - {fileID: 11400000, guid: ded1eaaeed518294aab2a289d5c637d9, type: 2}
   - {fileID: 11400000, guid: 0934cbfd183a47f4c9b4754a36f123d2, type: 2}

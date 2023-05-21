@@ -93,9 +93,7 @@ public class TerrainGenerator : MonoBehaviour
             InitializeTransitionScript(terrainTransitionScript, td);
         }
 
-            
-        obstacleGenerator.GenerateObstacles(currentPosition, numOfObstaclesOnRow, td);
-        
+        obstacleGenerator.GenerateObstacles(currentPosition, numOfObstaclesOnRow, td);        
         EnvironmentGenerator environmentGenerator = terrain.GetComponent<EnvironmentGenerator>();
         if (environmentGenerator) environmentGenerator.SpawnEnvironment(prevTerrain);
 

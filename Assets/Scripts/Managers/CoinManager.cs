@@ -25,6 +25,10 @@ public class CoinManager : MonoBehaviour
         UpdateCoinUI();
     }
 
+    public int GetCoins() {
+        return coins;
+    }
+
     void UpdateCoinUI()
     {
         coinText.text = coins.ToString();

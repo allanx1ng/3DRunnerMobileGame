@@ -106,7 +106,6 @@ public class ShopManagerScript : MonoBehaviour
     public void loadPanels()
     {
         setAllTemplatesFalse();
-        Debug.Log("Hello, world!");
 
 
         switch (mode)

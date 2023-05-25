@@ -7,7 +7,6 @@ using TMPro;
 public class Inventory : MonoBehaviour
 {
     public int coins;
-    public int gems;
     private Initialize parentComponent;
     public TMP_Text coinUI;
     public TMP_Text gemUI;
@@ -15,14 +14,6 @@ public class Inventory : MonoBehaviour
     public GameObject skinItemTemplate;
     public Item[] skins;
     public Weapon[] weapons;
-
-
-
-
-
-
-
-
 
     void Start()
     {
@@ -37,18 +28,12 @@ public class Inventory : MonoBehaviour
         // }
 
         loadPanels();
-
-
-
     }
 
     void Update()
     {
         coins = parentComponent.getCoins();
         coinUI.text = "Coins " + coins.ToString();
-
-        // gems = parentComponent.getGems();
-        // gemUI.text = "Coins " + gems.ToString();
     }
 
     public void closeInventory()

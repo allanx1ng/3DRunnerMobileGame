@@ -9,17 +9,9 @@ public class Initialize : MonoBehaviour
 
     // All UIs under canvas
     public GameObject[] UIList;
-
-    public int coins;
-    public int[] items;
-
     public Weapon[] weapons;
+    private PlayerData playerData;
 
-    private PlayerData data;
-
-    private string path = "";
-    private string persistentPath = "";
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,72 +22,36 @@ public class Initialize : MonoBehaviour
             } else {
                 UIList[i].SetActive(false);
             }
-            
         }
-        CreatePlayerData();
-        SetPaths();
-        LoadData();
+
+        Init();
     }
 
-    void Update() {
-
-    }
-
-    private void SetPaths()
-    {
-        path = Application.dataPath + Path.AltDirectorySeparatorChar + "CoinData.json";
-        persistentPath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "CoinData.json";
-    }
-
-    private void CreatePlayerData() {
-        int[] temp = {0};
-        data = new PlayerData(0,0,temp);
-    }
-
-    public void SaveData()
-    {
-        data.coins = getCoins();
-        data.items = getItems();
-        string savePath = path;
-
-        Debug.Log("Saving Data at " + savePath);
-        string json = JsonUtility.ToJson(data);
-        Debug.Log(json);
-
-        using StreamWriter writer = new StreamWriter(savePath);
-        writer.Write(json);
-        writer.Close();
-    }
-
-    public void LoadData()
-    {
-        using StreamReader reader = new StreamReader(path);
-        string json = reader.ReadToEnd();
-
-        data = JsonUtility.FromJson<PlayerData>(json);
-        Debug.Log(data.ToString());
-        coins = data.getCoins();
-        items = data.getItems();
-        Debug.Log(items);
-
+    void Init() {
+        playerData = GameManager.Instance.GetPlayerData();
         for(int i = 0; i<weapons.Length; i++) {
             weapons[i].isOwned = false; 
         }
 
+        int[] items = playerData.getItems();
+        
+        Debug.Log(weapons[0]);
         for (int i = 0; i<items.Length; i++) {
             int j = items[i];
+            Debug.Log(j);
             Weapon w = weapons[j];
             w.isOwned = true;
         }
     }
-    public int getCoins() {
-        return coins;
-    }
 
     public void addCoins(int i) {
-        coins += i;
-        SaveData();
+        GameManager.Instance.addCoins(i);
     }
+
+    public int getCoins() {
+        return GameManager.Instance.getCoins();
+    }
+
 
     public int[] getItems() {
         List<int> tempList = new List<int>();

@@ -16,6 +16,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Transform Options")]
     // Model Offsets
+    public Vector3 weaponRotation;
     public Vector3 projectilePosition;
     public Vector3 projectileRotation;
 

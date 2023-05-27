@@ -42,7 +42,7 @@ public class WeaponController : MonoBehaviour
 
         projectile.transform.parent = projectileHolder.transform;
         projectile.transform.position = playerPosition;
-        projectile.transform.Rotate(weaponData.projectileRotation);
+        projectile.transform.localEulerAngles = weaponData.projectileRotation;
 
         projectiles.Add(projectile);
     }
@@ -56,7 +56,7 @@ public class WeaponController : MonoBehaviour
         weaponModel.transform.localPosition = new Vector3(0f, 0f, 0f);
 
         // TODO: Maybe add localPosition and localEulerAngles property in WeaponData if different weapons behave differently in the hand
-        weaponModel.transform.localEulerAngles = new Vector3(-90f, 0f, 0f);
+        weaponModel.transform.localEulerAngles = weaponData.weaponRotation;
 
     }
 }

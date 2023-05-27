@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1775982204794291727
+--- !u!1 &6486902888721130164
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1436189558333873333}
-  - component: {fileID: 2612515897634624272}
-  - component: {fileID: 262741600315271130}
-  - component: {fileID: 4692743623005337404}
+  - component: {fileID: 5858562314128455694}
+  - component: {fileID: 7413506590622545835}
+  - component: {fileID: 4685687269045175137}
   m_Layer: 0
-  m_Name: Waterball
+  m_Name: Pickaxe_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1436189558333873333
+--- !u!4 &5858562314128455694
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775982204794291727}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 81.23, y: 3, z: -126.5}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_GameObject: {fileID: 6486902888721130164}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 139.41196, y: 0, z: -102.1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
---- !u!33 &2612515897634624272
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7413506590622545835
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775982204794291727}
-  m_Mesh: {fileID: 833895311348580767, guid: 4ebff7a7c05d9674fa4944c0a03b7fe0, type: 3}
---- !u!23 &262741600315271130
+  m_GameObject: {fileID: 6486902888721130164}
+  m_Mesh: {fileID: 6613403752886706179, guid: 9d6b73817def38742bd6ec3582591ead, type: 3}
+--- !u!23 &4685687269045175137
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775982204794291727}
+  m_GameObject: {fileID: 6486902888721130164}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,10 +61,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4995859862814845368, guid: 4ebff7a7c05d9674fa4944c0a03b7fe0, type: 3}
-  - {fileID: 4481961885346482133, guid: 4ebff7a7c05d9674fa4944c0a03b7fe0, type: 3}
-  - {fileID: 3325377747923943705, guid: 4ebff7a7c05d9674fa4944c0a03b7fe0, type: 3}
-  - {fileID: -4435397494468305048, guid: 4ebff7a7c05d9674fa4944c0a03b7fe0, type: 3}
+  - {fileID: 592568449907908330, guid: 9d6b73817def38742bd6ec3582591ead, type: 3}
+  - {fileID: 3332535676741542332, guid: 9d6b73817def38742bd6ec3582591ead, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,16 +84,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4692743623005337404
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775982204794291727}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.999999, y: 16.000004, z: 10.000002}
-  m_Center: {x: 0, y: 1.0000002, z: -1.4210855e-14}

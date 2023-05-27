@@ -14,7 +14,7 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         FindAndSetProjectileHolder();
-        EquipWeapon();
+        EquipWeapon(GameManager.Instance.GetWeapon());
     }
 
     void FindAndSetProjectileHolder() {
@@ -35,17 +35,21 @@ public class WeaponController : MonoBehaviour
 
     void ShootProjectile() {
         GameObject projectile = Instantiate(weaponData.projectileModel);
+        Projectile projectileScript = projectile.AddComponent<Projectile>();
+        projectileScript.Initialize(weaponData);
         Vector3 playerPosition = transform.position;
         playerPosition.y += 3f; // since the transform.position is at the character's feet, we need to offset it.
 
         projectile.transform.parent = projectileHolder.transform;
         projectile.transform.position = playerPosition;
-        projectile.transform.eulerAngles = new Vector3(90f, 0f, 0f);
+        projectile.transform.Rotate(weaponData.projectileRotation);
 
         projectiles.Add(projectile);
     }
 
-    void EquipWeapon() {
+    void EquipWeapon(int itemId) {
+
+        weaponData = WeaponManager.Instance.GetWeapon(itemId);
 
         GameObject weaponModel = Instantiate(weaponData.weaponModel);
         weaponModel.transform.parent = weaponHolder.transform;

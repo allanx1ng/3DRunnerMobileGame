@@ -19,6 +19,11 @@ public class Projectile : MonoBehaviour
         DestroyIfNeeded(); // destroy after else modifies destroyed properties
     }
 
+    public void Initialize(WeaponData weaponData) {
+        this.weaponData = weaponData;
+        playerController = FindObjectOfType<PlayerController>();
+    }
+
     private void OnTriggerEnter(Collider other) {
         GameObject otherObject = other.gameObject;
 

@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90d28cb2300961b4a900801d9308c830, type: 3}
-  m_Name: Waterball
+  m_Name: Hydro Staff
   m_EditorClassIdentifier: 
-  weaponModel: {fileID: 0}
+  weaponModel: {fileID: 6105336412257097635, guid: 6634f57c4a6c8834ebe7c9e23ce617ea, type: 3}
   projectileModel: {fileID: 87926010360833266, guid: 96beca22372c44e449bb7c66b378f8fe, type: 3}
-  projectilePosition: {x: 0, y: 2.5, z: 0}
+  itemId: 6
+  projectilePosition: {x: 0, y: 0, z: 0}
   projectileRotation: {x: 90, y: 0, z: 0}
-  damage: 1
-  speed: 10
-  delayBetweenShots: 1.5
-  distanceUntilDestruction: 10
-  rotationSpeed: 90
+  damage: 3
+  speed: 15
+  delayBetweenShots: 0.2
+  distanceUntilDestruction: 100
+  rotationSpeed: 0
   incomeMultiplier: 1
   multiplierToMobs: 1
   multiplierToBlocks: 1

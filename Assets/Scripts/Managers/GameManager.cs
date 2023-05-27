@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
         playerData.SaveData(path);
     }
 
+    public int GetWeapon() {
+        return playerData.getWeaponEquipped();
+    }
+
     private void SetPaths()
     {
         path = Application.dataPath + Path.AltDirectorySeparatorChar + "CoinData.json";

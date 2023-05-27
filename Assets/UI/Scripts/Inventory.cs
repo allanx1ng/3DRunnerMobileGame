@@ -26,27 +26,28 @@ public class Inventory : MonoBehaviour
         //     Weapon item = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/MyFolder/" + file.Name);
         //     weapons.Add(item);
         // }
-
-        loadPanels();
     }
 
     void Update()
     {
         coins = parentComponent.getCoins();
-        coinUI.text = "Coins " + coins.ToString();
+        coinUI.text = coins.ToString();
     }
 
     public void closeInventory()
     {
         closePanels();
-        gameObject.transform.parent.Find("Panel").gameObject.SetActive(true);
+        gameObject.transform.parent.Find("Main Menu").gameObject.SetActive(true);
         gameObject.SetActive(false);
         loadPanels();
         
     }
 
     public void openInventory() {
-        gameObject.transform.parent.Find("Panel").gameObject.SetActive(false);
+        closePanels();
+        gameObject.transform.parent.Find("Main Menu").gameObject.SetActive(false);
+        gameObject.transform.Find("ScrollRectPowerUps").gameObject.SetActive(true);
+        gameObject.transform.Find("ScrollRectSkins").gameObject.SetActive(false);
         gameObject.SetActive(true);
         loadPanels();
     }
@@ -57,7 +58,7 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < skins.Length; i++)
         {
-            DuplicateSkinElement();
+           // DuplicateSkinElement();
         }
 
     }

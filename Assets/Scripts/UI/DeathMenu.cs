@@ -13,8 +13,9 @@ public class DeathMenu : MonoBehaviour
 
         if (state) {
             // player died.
-
-            scoreText.text = "Score: " + CoinManager.Instance.GetCoins();
+            int coins = CoinManager.Instance.GetCoins();
+            GameManager.Instance.addCoins(coins);
+            scoreText.text = "Score: " + coins;
         }
     }
 

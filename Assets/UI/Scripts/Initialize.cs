@@ -38,7 +38,6 @@ public class Initialize : MonoBehaviour
         Debug.Log(weapons[0]);
         for (int i = 0; i<items.Length; i++) {
             int j = items[i];
-            Debug.Log(j);
             Weapon w = weapons[j];
             w.isOwned = true;
         }

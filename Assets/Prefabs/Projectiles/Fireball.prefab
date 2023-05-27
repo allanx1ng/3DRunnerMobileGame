@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8511005855502340206}
   - component: {fileID: 5906996420147963044}
   - component: {fileID: 30979198977380656}
+  - component: {fileID: 3567346345002966588}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -99,3 +100,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.9999995, y: 14.000004, z: 8.000002}
   m_Center: {x: 0, y: 3.0000007, z: -4.2632564e-14}
+--- !u!54 &3567346345002966588
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5402386073034933617}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0

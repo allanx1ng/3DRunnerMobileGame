@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d28cb2300961b4a900801d9308c830, type: 3}
+  m_Name: Wood Pickaxe
+  m_EditorClassIdentifier: 
+  weaponModel: {fileID: 6486902888721130164, guid: ec4a099d70ac70f4aa4e2440b2609e3d, type: 3}
+  projectileModel: {fileID: 1566886546145877064, guid: 646299a53bd9ba94c9d23fdedb406149, type: 3}
+  itemId: 4
+  projectilePosition: {x: 0, y: 0, z: 0}
+  projectileRotation: {x: 0, y: 0, z: 0}
+  damage: 1
+  speed: 10
+  delayBetweenShots: 1
+  distanceUntilDestruction: 100
+  rotationSpeed: 90
+  incomeMultiplier: 1
+  multiplierToMobs: 1
+  multiplierToBlocks: 1

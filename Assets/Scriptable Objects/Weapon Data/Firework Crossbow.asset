@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d28cb2300961b4a900801d9308c830, type: 3}
+  m_Name: Firework Crossbow
+  m_EditorClassIdentifier: 
+  weaponModel: {fileID: 3057149593083747097, guid: e10c50ed64ac2534bbbc1563c0fe3310, type: 3}
+  projectileModel: {fileID: 8993484975403678006, guid: c1382bd4a7e526c44bdb527eb57a7039, type: 3}
+  itemId: 1
+  projectilePosition: {x: 0, y: 0, z: 0}
+  projectileRotation: {x: 0, y: 0, z: 0}
+  damage: 1
+  speed: 10
+  delayBetweenShots: 1
+  distanceUntilDestruction: 100
+  rotationSpeed: 90
+  incomeMultiplier: 1
+  multiplierToMobs: 1
+  multiplierToBlocks: 1

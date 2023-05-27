@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d28cb2300961b4a900801d9308c830, type: 3}
+  m_Name: Pyro Staff
+  m_EditorClassIdentifier: 
+  weaponModel: {fileID: 1522845626320232238, guid: 61ab1eede82cc434e92f18b4045bd96b, type: 3}
+  projectileModel: {fileID: 5402386073034933617, guid: 954360d77906c7749b26943789fb1d7a, type: 3}
+  itemId: 7
+  projectilePosition: {x: 0, y: 0, z: 0}
+  projectileRotation: {x: 0, y: 0, z: 0}
+  damage: 1
+  speed: 10
+  delayBetweenShots: 1
+  distanceUntilDestruction: 100
+  rotationSpeed: 90
+  incomeMultiplier: 1
+  multiplierToMobs: 1
+  multiplierToBlocks: 1

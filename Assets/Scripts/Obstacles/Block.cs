@@ -42,14 +42,16 @@ public class Block : MonoBehaviour
     private void TakeDamageFromProjectile(WeaponData weaponData, PlayerController playerController) {
         
         currentHealth -= weaponData.damage;
+        CoinManager.Instance.AddCoins((int) weaponData.damage);
 
         if (currentHealth <= 0) {
 
             Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            CoinManager.Instance.AddCoins((int) maxHealth);
             return;
         }
-        playerController.AddCoins(1);
+        
         
     }
 
@@ -59,7 +61,7 @@ public class Block : MonoBehaviour
         nextStage = nextStage >= modelCount ? (int) modelCount - 1 : nextStage;
         
         if (nextStage != currentStage) {
-            
+  
             GameObject breakingModel = Instantiate(stageModels[nextStage]);
 
             breakingModel.transform.parent = gameObject.transform;
@@ -69,6 +71,7 @@ public class Block : MonoBehaviour
             if (breakingStageBlock != null) Destroy(breakingStageBlock);
 
             breakingStageBlock = breakingModel;
+            currentStage = nextStage;
         }
     }
 

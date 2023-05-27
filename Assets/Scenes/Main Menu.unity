@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5573,6 +5573,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3304436531561642459, guid: 1dae42767619b4a378872e6509875457, type: 3}
   m_PrefabInstance: {fileID: 1386794685}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023415722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023415724}
+  - component: {fileID: 1023415723}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1023415723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023415722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e35d18ec6df19439550f229539a079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: 
+  persistentPath: 
+--- !u!4 &1023415724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023415722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034979512
 GameObject:
   m_ObjectHideFlags: 0
@@ -5672,7 +5718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coins: 0
-  gems: 0
   coinUI: {fileID: 726339441}
   gemUI: {fileID: 0}
   powerupItemTemplate: {fileID: 982548338}
@@ -6897,7 +6942,6 @@ GameObject:
   - component: {fileID: 1261909824}
   - component: {fileID: 1261909823}
   - component: {fileID: 1261909822}
-  - component: {fileID: 1261909825}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6955,26 +6999,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1261909825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261909821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa50424d487714735872e680539dd43e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UIList:
-  - {fileID: 286594639}
-  - {fileID: 2087352505}
-  - {fileID: 429984392}
-  - {fileID: 941234697}
-  coins: 0
-  items: 
-  weapons: []
 --- !u!224 &1262535779 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4417125280221319876, guid: ad9d8c47787294401ba1aeb215938903, type: 3}
@@ -10004,8 +10028,6 @@ MonoBehaviour:
   - {fileID: 429984392}
   - {fileID: 941234697}
   - {fileID: 1034979512}
-  coins: 0
-  items: 
   weapons:
   - {fileID: 11400000, guid: 47822ea2cd3574bbb84e07ececcac644, type: 2}
   - {fileID: 11400000, guid: d409916f8002549e3b87333c650b0fab, type: 2}

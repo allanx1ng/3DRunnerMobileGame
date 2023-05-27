@@ -9,6 +9,7 @@ public class EnvironmentGenerator : MonoBehaviour
     private float environmentMargin = 1f;
     private float leftBoundary = -10f;
     private float rightBoundary = 10f;
+    private float widthFence = 5f;
 
     [SerializeField] private List<GameObject> environmentObjects = new List<GameObject>();
 
@@ -73,15 +74,18 @@ public class EnvironmentGenerator : MonoBehaviour
             if (Random.Range(0, 2) == 0) {
                 // left to leftBoundary
                 minX = currentPosition.x - 50f;
-                maxX = currentPosition.x + leftBoundary;
+                maxX = currentPosition.x + leftBoundary - widthFence;
             } else {
                 // rightBoundary to right
-                minX = currentPosition.x + rightBoundary;
+                minX = currentPosition.x + rightBoundary + widthFence;
                 maxX = currentPosition.x + 50f;
             }
 
             // set the correct min and max values (outside of the 3 lanes)
-            Vector3 candidatePosition = new Vector3(Random.Range(minX, maxX), currentPosition.y + 0.5f, currentPosition.z);
+            
+            int tilesX = (int) ((maxX - minX) / 10f);
+            float randomX = Random.Range(0, tilesX + 1) * 10 + minX;
+            Vector3 candidatePosition = new Vector3(randomX, currentPosition.y + 0.5f, currentPosition.z);
             
             GameObject environmentObjectPrefab = ChooseEnvironmentObject();
 

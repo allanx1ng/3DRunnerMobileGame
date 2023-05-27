@@ -37,7 +37,7 @@ public class ShopManagerScript : MonoBehaviour
     {
         coins = parentComponent.getCoins();
 
-        coinUI.text = "Coins " + coins.ToString();
+        coinUI.text = coins.ToString();
         loadPanels();
     }
 

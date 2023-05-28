@@ -14,13 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponModel: {fileID: 5799440334007399876, guid: 22de2b5933521944d954f0ba627a11ce, type: 3}
   projectileModel: {fileID: 117287346848941179, guid: 27ccabd65a68bda4687d47d1702cf0aa, type: 3}
-  projectilePosition: {x: 0, y: 0, z: 0}
+  itemId: 0
+  weaponPosition: {x: 0, y: 0, z: 0}
+  weaponRotation: {x: 0, y: 0, z: 0}
+  projectilePosition: {x: 0, y: 0, z: 0.5}
   projectileRotation: {x: 0, y: 0, z: 0}
   damage: 3
   speed: 15
   delayBetweenShots: 0.15
   distanceUntilDestruction: 100
-  rotationSpeed: 150
+  rotationVector: {x: 0, y: 0, z: 0}
   incomeMultiplier: 1
   multiplierToMobs: 1
   multiplierToBlocks: 1

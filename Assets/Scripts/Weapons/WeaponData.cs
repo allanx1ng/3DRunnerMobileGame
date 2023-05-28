@@ -16,6 +16,7 @@ public class WeaponData : ScriptableObject
 
     [Header("Transform Options")]
     // Model Offsets
+    public Vector3 weaponPosition;
     public Vector3 weaponRotation;
     public Vector3 projectilePosition;
     public Vector3 projectileRotation;
@@ -30,7 +31,7 @@ public class WeaponData : ScriptableObject
 
 
     [Header("Misc")]
-    public float rotationSpeed = 90f;
+    public Vector3 rotationVector = new Vector3(0, 0, 0);
     public float incomeMultiplier = 1f;
     public float multiplierToMobs = 1f;
     public float multiplierToBlocks = 1f;

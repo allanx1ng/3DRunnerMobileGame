@@ -41,7 +41,7 @@ public class WeaponController : MonoBehaviour
         playerPosition.y += 3f; // since the transform.position is at the character's feet, we need to offset it.
 
         projectile.transform.parent = projectileHolder.transform;
-        projectile.transform.position = playerPosition;
+        projectile.transform.position = playerPosition + weaponData.projectilePosition;
         projectile.transform.localEulerAngles = weaponData.projectileRotation;
 
         projectiles.Add(projectile);
@@ -53,7 +53,7 @@ public class WeaponController : MonoBehaviour
 
         GameObject weaponModel = Instantiate(weaponData.weaponModel);
         weaponModel.transform.parent = weaponHolder.transform;
-        weaponModel.transform.localPosition = new Vector3(0f, 0f, 0f);
+        weaponModel.transform.localPosition = weaponData.weaponPosition;
 
         // TODO: Maybe add localPosition and localEulerAngles property in WeaponData if different weapons behave differently in the hand
         weaponModel.transform.localEulerAngles = weaponData.weaponRotation;

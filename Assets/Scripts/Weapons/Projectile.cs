@@ -61,8 +61,8 @@ public class Projectile : MonoBehaviour
     private void UpdateTransforms() {
         float playerSpeed = playerController.GetSpeed();
 
-        float rot = Time.deltaTime * weaponData.rotationSpeed;
-        transform.Rotate(Vector3.right, rot);
+        transform.Rotate(weaponData.rotationVector * Time.deltaTime);
+        // transform.Rotate(Vector3.right, rot);
 
         float forwardDistance = playerSpeed + weaponData.speed;
         forwardDistance *= Time.deltaTime;

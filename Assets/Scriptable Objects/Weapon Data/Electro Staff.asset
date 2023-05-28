@@ -15,13 +15,14 @@ MonoBehaviour:
   weaponModel: {fileID: 168317494149767440, guid: 54cd70dd760169f4691fe2964f4c7709, type: 3}
   projectileModel: {fileID: 4274082992613574, guid: 56f714edddb0bde40b6de02c677d5954, type: 3}
   itemId: 5
+  weaponRotation: {x: -30, y: -15, z: -15}
   projectilePosition: {x: 0, y: 0, z: 0}
-  projectileRotation: {x: 0, y: 0, z: 0}
-  damage: 1
+  projectileRotation: {x: 0, y: 90, z: 0}
+  damage: 3
   speed: 10
-  delayBetweenShots: 1
+  delayBetweenShots: 0.25
   distanceUntilDestruction: 100
-  rotationSpeed: 90
+  rotationSpeed: 0
   incomeMultiplier: 1
   multiplierToMobs: 1
   multiplierToBlocks: 1

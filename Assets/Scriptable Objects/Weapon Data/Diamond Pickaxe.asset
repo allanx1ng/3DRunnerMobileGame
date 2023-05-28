@@ -15,11 +15,12 @@ MonoBehaviour:
   weaponModel: {fileID: 3942868300621359848, guid: 0fdf20cfd3adf0347849b68b870fa09c, type: 3}
   projectileModel: {fileID: 5982352196207618086, guid: 2de312c6784cc2a4a95ba08f5b070dac, type: 3}
   itemId: 2
+  weaponRotation: {x: 0, y: 0, z: 0}
   projectilePosition: {x: 0, y: 0, z: 0}
   projectileRotation: {x: 0, y: 0, z: 0}
-  damage: 1
+  damage: 3
   speed: 10
-  delayBetweenShots: 1
+  delayBetweenShots: 0.25
   distanceUntilDestruction: 100
   rotationSpeed: 90
   incomeMultiplier: 1

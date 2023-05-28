@@ -39,6 +39,21 @@ public class GameManager : MonoBehaviour
         playerData.SaveData(path);
     }
 
+    public int GetHighScore() {
+        return playerData.getHighScore();
+    }
+
+    // true if high score is beaten, false if not
+    public bool SetHighScoreIfBeaten(int score) {
+        int s = playerData.getHighScore();
+        if (score > s) {
+            playerData.setHighScore(score);
+            playerData.SaveData(path);
+            return true;
+        }
+        return false;
+    }
+
     public int GetWeapon() {
         return playerData.getWeaponEquipped();
     }

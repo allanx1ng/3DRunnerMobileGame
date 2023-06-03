@@ -23,8 +23,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void Restart() {
-        gameObject.SetActive(false);
-        gameObject.transform.parent.Find("Panel").gameObject.SetActive(true);
+        GameManager.Instance.RestartGame();
     }
 
     public void MainMenu() {

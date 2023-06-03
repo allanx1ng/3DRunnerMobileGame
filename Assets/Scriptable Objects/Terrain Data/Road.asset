@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Road
   m_EditorClassIdentifier: 
   terrain: {fileID: 4798334861997916765, guid: 6995eb41530f0ad4098ce236ad7e2ade, type: 3}
-  maxInSuccession: 3
+  entranceTerrainData: {fileID: 0}
+  exitTerrainData: {fileID: 0}
+  maxInSuccession: 4
   minInSuccession: 1
   canSpawnBlocks: 0
   spawnableMobs: []
   spawnableBlocks: []
+  isTransitionTerrain: 0
+  transitionType: 

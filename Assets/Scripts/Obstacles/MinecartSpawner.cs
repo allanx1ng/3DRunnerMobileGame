@@ -5,10 +5,9 @@ public class MinecartSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject minecartPrefab;
     
-    [SerializeField] private float spawnDistanceThreshold = 100f;
-    [SerializeField] private float minTime = 5f;
-    [SerializeField] private float maxTime = 10f;
-    [SerializeField] private float minecartVelocity = 20f;
+    private float spawnDistanceThreshold = 150f;
+    private float minTime = 3f;
+    private float maxTime = 7f;
     [SerializeField] private float offsetFromEdge = 25;
 
     private Renderer objectRenderer;
@@ -37,8 +36,7 @@ public class MinecartSpawner : MonoBehaviour
     {
         // To start off with a random time taken to spawn a minecart, only does anything if the game starts with the player close to the terrain that spawns
         // the minecarts.
-        yield return new WaitForSeconds(Random.Range(1f, 2f));
-
+        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
         while (true)
         {
             float distanceToPlayer = Vector3.Distance(player.transform.position, objectBounds.center);
@@ -61,8 +59,9 @@ public class MinecartSpawner : MonoBehaviour
                     minecartRigidbody = minecartInstance.AddComponent<Rigidbody>();
                 }
                 minecartRigidbody.useGravity = false;
-                minecartRigidbody.velocity = new Vector3(minecartVelocity * direction, 0f, 0f);
-
+                minecartRigidbody.isKinematic = true;
+                // minecartRigidbody.velocity = new Vector3(minecartVelocity * direction, 0f, 0f);
+            
                 // Set the parent of the minecart so that it will be destroyed when the terrain does.
                 minecartInstance.transform.parent = transform;
 
@@ -72,7 +71,7 @@ public class MinecartSpawner : MonoBehaviour
                 {
                     minecartController = minecartInstance.AddComponent<MinecartController>();
                 }
-                minecartController.Initialize(objectRenderer);
+                minecartController.Initialize(objectRenderer, direction);
 
                 
             }

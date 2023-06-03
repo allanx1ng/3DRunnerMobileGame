@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5615405027887610543}
   - component: {fileID: 8809663788549797130}
   - component: {fileID: 6748294137762611648}
+  - component: {fileID: 8339343440900649106}
   m_Layer: 0
   m_Name: Minecart
-  m_TagString: Untagged
+  m_TagString: Enemy Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,3 +93,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8339343440900649106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090824270475337749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.000004, y: 14, z: 27.000006}
+  m_Center: {x: 0, y: 7, z: 0.5000001}

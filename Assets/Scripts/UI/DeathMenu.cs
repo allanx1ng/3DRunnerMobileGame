@@ -27,7 +27,7 @@ public class DeathMenu : MonoBehaviour
     }
 
     public void Restart() {
-        Debug.Log("TODO: RESTART");
+        GameManager.Instance.RestartGame();
     }
 
     public void MainMenu() {

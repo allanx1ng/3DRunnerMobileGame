@@ -30,6 +30,7 @@ public class ObstacleGenerator : MonoBehaviour
     private List<GameObject> obstacleRows = new List<GameObject>();
     [SerializeField] private GameObject obstacleHolder;
     private int countOfGeneratedRows = 0;
+    public int playerBufferBeforeSpawn = 7;
     private void GenerateObstacle(Vector3 position, GameObject obstaclePrefab, GameObject obstacleRow) {
         // Generate an obstacle at the given position
         Quaternion rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f)); // face backwards
@@ -41,6 +42,8 @@ public class ObstacleGenerator : MonoBehaviour
 
     public void GenerateObstacles(Vector3 position, int amount, TerrainData terrainData) {
         
+        
+
         // Generate multiple obstacles centered at the given position, creating a row of obstacles on the x-axis
         float startX = 0 - (((float) amount - 1) / 2 * sizeOfBlock);    
 
@@ -48,6 +51,11 @@ public class ObstacleGenerator : MonoBehaviour
         obstacleRow.transform.SetPositionAndRotation(position, Quaternion.identity);
         obstacleRow.transform.SetParent(obstacleHolder.transform);
         obstacleRows.Add(obstacleRow);
+
+        if (playerBufferBeforeSpawn > 0) {
+            playerBufferBeforeSpawn--;
+            return;
+        }
 
         // Dont generate obstacles for objects with no children (roads)
         if (terrainData.canSpawnBlocks) {

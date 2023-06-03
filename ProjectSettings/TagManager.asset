@@ -9,6 +9,7 @@ TagManager:
   - Default Environment
   - Mob
   - Enemy Projectile
+  - Minecart
   layers:
   - Default
   - TransparentFX

@@ -53,13 +53,12 @@ public class PlayerController : MonoBehaviour
         initializeCameraFollow();
     }
  
-    // Update is called once per frame
-    void FixedUpdate()
-    {
+    void Update() {
         if (parent == null) return;
         movePlayerWithSwipe();
         movePlayerForward();
     }
+
 
     // Initializes the camera to follow the model component
     void initializeCameraFollow()
@@ -74,30 +73,33 @@ public class PlayerController : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Moved)
+            
+            if (touch.phase == TouchPhase.Began)
             {
-                // Get the delta position of the touch
-                Vector2 deltaPosition = touch.deltaPosition;
-
-                // Set the X and Z movement based on the delta position
-                Vector3 movement = new Vector3(deltaPosition.x, 0, 0) * horizontalSpeed * Time.deltaTime;
-
-                // bound the player's movement
-                Vector3 playerPosition = transform.position;
-
-                if (movement.x + playerPosition.x > rightBound && movement.x > 0) {
-                    movement.x = rightBound - playerPosition.x;
+                if (touch.position.x < Screen.width / 2 && lane > Lane.Left) // Swipe Left
+                {
+                    lane--;
+                    isMoving = true;
                 }
-
-                if (movement.x + playerPosition.x < leftBound && movement.x < 0) {
-                    movement.x = leftBound - playerPosition.x;
+                else if (touch.position.x > Screen.width / 2 && lane < Lane.Right) // Swipe Right
+                {
+                    lane++;
+                    isMoving = true;
                 }
-
-                // Move the player based on the movement and the speed
-                parent.transform.Translate(movement, Space.World);
             }
         }
+
+        targetPosition = new Vector3(((int)lane - 1) * 5, transform.position.y, transform.position.z);
+        
+        if (isMoving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, horizontalSpeed * Time.deltaTime);
+            if (transform.position == targetPosition)
+            {
+                isMoving = false;
+            }
+        }
+        
     }
 
     public void AddCoins(int coins) {
@@ -109,10 +111,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(0, 0, 1);
         movement *= forwardSpeed * Time.deltaTime;
         parent.transform.Translate(movement, Space.World);
-    }
-
-    private void UpdatePlayerPosition() {
-        
     }
 
     public void TakeDamage(int damage)

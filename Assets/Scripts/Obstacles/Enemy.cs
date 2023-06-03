@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     public void HandleProjectileHit(Projectile projectile, PlayerController playerController) {
         StartCoroutine(ApplyRedPulse());
 
-        TakeDamage(projectile.weaponData.damage);
+        TakeDamage(projectile.weaponData);
     }
 
     IEnumerator SpawnProjectile()
@@ -61,10 +61,10 @@ public class Enemy : MonoBehaviour
     }
 
     // Add this method to handle taking damage
-    public void TakeDamage(float damage)
+    public void TakeDamage(WeaponData weaponData)
     {
-        enemyHealth -= damage;
-        CoinManager.Instance.AddCoins((int) damage);
+        enemyHealth -= weaponData.damage * weaponData.multiplierToMobs;
+        CoinManager.Instance.AddCoins((int) weaponData.damage);
 
         if (enemyHealth <= 0)
         {

@@ -41,7 +41,7 @@ public class Block : MonoBehaviour
 
     private void TakeDamageFromProjectile(WeaponData weaponData, PlayerController playerController) {
         
-        currentHealth -= weaponData.damage;
+        currentHealth -= weaponData.damage * weaponData.multiplierToBlocks;
         CoinManager.Instance.AddCoins((int) weaponData.damage);
 
         if (currentHealth <= 0) {

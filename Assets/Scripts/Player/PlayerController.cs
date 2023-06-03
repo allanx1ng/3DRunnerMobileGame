@@ -6,17 +6,30 @@ using System;
 public class PlayerController : MonoBehaviour
 {
 
-    // Player movement properties
+    [Header("Player Properties")]
     public float forwardSpeed; 
     public float horizontalSpeed;
+    
+    private int health = 3;
 
     // Bounds the player's horizontal movement.
     public float leftBound = -7;
     public float rightBound = 7;
 
-    private int health = 3;
+    public Animator animator;
+
+    private Vector3 targetPosition;
+    private Lane lane = Lane.Middle;
+    private bool isMoving = false;
 
     private GameObject parent;
+
+    public enum Lane
+    {
+        Left,
+        Middle,
+        Right
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -35,6 +48,7 @@ public class PlayerController : MonoBehaviour
         parent = transform.parent.gameObject;
         parent.tag = "Player";
 
+        targetPosition = transform.position;
         
         initializeCameraFollow();
     }
@@ -95,6 +109,10 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(0, 0, 1);
         movement *= forwardSpeed * Time.deltaTime;
         parent.transform.Translate(movement, Space.World);
+    }
+
+    private void UpdatePlayerPosition() {
+        
     }
 
     public void TakeDamage(int damage)

@@ -127,6 +127,8 @@ public class PlayerController : MonoBehaviour
     {
         health -= damage;
 
+        AudioManager.Instance.PlaySound("Player Hit");
+
         UIManager.Instance.UpdateHearts(health);
 
         if (health <= 0)

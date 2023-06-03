@@ -23,10 +23,11 @@ public class Block : MonoBehaviour
     private GameObject breakingStageBlock = null;
     private int currentStage = -1; // stage of -1 means that it is not using any stageModels game objet right now
 
-
     void Start() {
         currentHealth = maxHealth;
+
     }
+
 
     public void HandleProjectileHit(Projectile projectileScript, PlayerController playerController) {
 
@@ -44,13 +45,20 @@ public class Block : MonoBehaviour
         currentHealth -= weaponData.damage * weaponData.multiplierToBlocks;
         CoinManager.Instance.AddCoins((int) weaponData.damage);
 
+        
+
         if (currentHealth <= 0) {
+            AudioManager.Instance.PlaySound("Block Break");
 
             Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
             CoinManager.Instance.AddCoins((int) maxHealth);
             return;
+        } else {
+            AudioManager.Instance.PlaySound("Block Hit");
         }
+        
+        
         
         
     }

@@ -66,6 +66,8 @@ public class Enemy : MonoBehaviour
         enemyHealth -= weaponData.damage * weaponData.multiplierToMobs;
         CoinManager.Instance.AddCoins((int) weaponData.damage);
 
+        AudioManager.Instance.PlaySound("Mob Hit");
+
         if (enemyHealth <= 0)
         {
             Instantiate(deathEffect, transform.position + new Vector3(0f, 4f, 0f), Quaternion.identity);

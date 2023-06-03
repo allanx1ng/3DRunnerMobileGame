@@ -7,7 +7,7 @@ public class MinecartSpawner : MonoBehaviour
     
     private float spawnDistanceThreshold = 150f;
     private float minTime = 3f;
-    private float maxTime = 7f;
+    private float maxTime = 9f;
     [SerializeField] private float offsetFromEdge = 25;
 
     private Renderer objectRenderer;

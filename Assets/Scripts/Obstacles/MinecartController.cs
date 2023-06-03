@@ -4,7 +4,7 @@ public class MinecartController : MonoBehaviour
 {
     private Renderer terrainRenderer;
     private Bounds terrainBounds;
-    private float minecartVelocity = 25f;
+    private float minecartVelocity = 15f;
     private float direction = 1;
     public void Initialize(Renderer terrainRenderer, float direction)
     {

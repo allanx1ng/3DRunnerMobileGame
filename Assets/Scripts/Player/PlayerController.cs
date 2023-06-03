@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 targetPosition;
     private Lane lane = Lane.Middle;
     private bool isMoving = false;
+    private Vector2 touchStart;
 
     private GameObject parent;
 
@@ -73,18 +74,27 @@ public class PlayerController : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            
+
             if (touch.phase == TouchPhase.Began)
             {
-                if (touch.position.x < Screen.width / 2 && lane > Lane.Left) // Swipe Left
+                touchStart = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended && !isMoving)
+            {
+                Vector2 swipeDelta = touch.position - touchStart;
+
+                if (Mathf.Abs(swipeDelta.x) > Mathf.Abs(swipeDelta.y)) // Horizontal swipe
                 {
-                    lane--;
-                    isMoving = true;
-                }
-                else if (touch.position.x > Screen.width / 2 && lane < Lane.Right) // Swipe Right
-                {
-                    lane++;
-                    isMoving = true;
+                    if (swipeDelta.x < 0 && lane > Lane.Left) // Swipe Left
+                    {
+                        lane--;
+                        isMoving = true;
+                    }
+                    else if (swipeDelta.x > 0 && lane < Lane.Right) // Swipe Right
+                    {
+                        lane++;
+                        isMoving = true;
+                    }
                 }
             }
         }

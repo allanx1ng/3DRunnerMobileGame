@@ -19,11 +19,11 @@ MonoBehaviour:
   weaponRotation: {x: -30, y: -15, z: -15}
   projectilePosition: {x: 0, y: 0, z: 1}
   projectileRotation: {x: 0, y: 90, z: 270}
-  damage: 5
+  damage: 10
   speed: 15
-  delayBetweenShots: 0.2
+  delayBetweenShots: 0.3
   distanceUntilDestruction: 100
   rotationVector: {x: 0, y: 0, z: 0}
   incomeMultiplier: 1
-  multiplierToMobs: 1
-  multiplierToBlocks: 1
+  multiplierToMobs: 0.5
+  multiplierToBlocks: 2

@@ -20,10 +20,10 @@ MonoBehaviour:
   projectilePosition: {x: 0, y: 0, z: 0.5}
   projectileRotation: {x: -10, y: 0, z: 20}
   damage: 10
-  speed: 10
+  speed: 25
   delayBetweenShots: 0.25
   distanceUntilDestruction: 100
   rotationVector: {x: 270, y: 0, z: 0}
   incomeMultiplier: 1
-  multiplierToMobs: 1
-  multiplierToBlocks: 1
+  multiplierToMobs: 2
+  multiplierToBlocks: 4

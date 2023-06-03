@@ -7,10 +7,10 @@ public class ObstacleGenerator : MonoBehaviour
     [TextArea]
     public string SpawningComment = "This handles the spawning behaviour of the obstacles, the minimum and maximum distance between clusters, and size of clusters";
 
-    public const int MIN_SIZE_MARGIN = 8;
-    public const int MAX_SIZE_MARGIN = 18;
+    public const int MIN_SIZE_MARGIN = 10;
+    public const int MAX_SIZE_MARGIN = 15;
     public const int MIN_SIZE_CLUSTER = 3;
-    public const int MAX_SIZE_CLUSTER = 12;
+    public const int MAX_SIZE_CLUSTER = 10;
 
     private int currentSizeCluster = MIN_SIZE_CLUSTER;
     private int currentSizeMargin = MIN_SIZE_MARGIN;

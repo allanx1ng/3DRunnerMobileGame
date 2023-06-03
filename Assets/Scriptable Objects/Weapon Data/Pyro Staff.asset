@@ -26,4 +26,4 @@ MonoBehaviour:
   rotationVector: {x: 0, y: 0, z: 0}
   incomeMultiplier: 1
   multiplierToMobs: 3
-  multiplierToBlocks: 54
+  multiplierToBlocks: 4

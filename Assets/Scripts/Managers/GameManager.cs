@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         }
 
         playerData.items = owned.ToArray();
+        playerData.SaveData(path);
     }
 
     public int GetHighScore() {

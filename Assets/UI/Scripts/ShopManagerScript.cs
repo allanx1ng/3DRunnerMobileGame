@@ -95,7 +95,6 @@ public class ShopManagerScript : MonoBehaviour
                     parentComponent.addCoins(-price);
                     weapons[i].isOwned = true;
                     UpdateShop();
-                    GameManager.Instance.SetPurchasedWeapons(weapons);
                     //unlock item 
                 }
                 break;
@@ -144,7 +143,12 @@ public class ShopManagerScript : MonoBehaviour
                         Panel.Find("Price").GetComponent<TMP_Text>().text = weapons[i].baseCost.ToString();
                         int index = i;
                         int price = weapons[i].baseCost;
-                        Panel.Find("Purchase").GetComponent<Button>().onClick.AddListener(() => purchaseItem(index, price));
+                        Panel.Find("Purchase").GetComponent<Button>().onClick.AddListener(() => {
+                            
+                            purchaseItem(index, price);
+                            Debug.Log(index);
+                            GameManager.Instance.SetPurchasedWeapons(weapons);
+                    });
                     }
 
                 }

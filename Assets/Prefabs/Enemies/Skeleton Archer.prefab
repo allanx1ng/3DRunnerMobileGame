@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 5f29d89a1d715224c9ddf4fb6b939248, type: 2}
   redOverlayMaterial: {fileID: 2100000, guid: 3f625113d9c57fc4cbc70fc78faaecf2, type: 2}
-  enemyHealth: 5
+  enemyHealth: 25
   deathEffect: {fileID: 1434513258164286381, guid: fb488f59ec20e0c44a02be9d8bf15e4a, type: 3}
 --- !u!136 &5999061817434807233
 CapsuleCollider:

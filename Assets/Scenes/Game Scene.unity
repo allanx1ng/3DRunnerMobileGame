@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.75
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.42233077, g: 0.46207702, b: 0.5237417, a: 0.75}
+  m_IndirectSpecularColor: {r: 0.42232585, g: 0.46207446, b: 0.52373666, a: 0.75}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,6 +320,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb840277596c5f74d9cb33e5f63703f6, type: 2}
   - {fileID: 11400000, guid: 8c016c92d6a160c44b7e343685960e96, type: 2}
   - {fileID: 11400000, guid: 2a7a6244c8383894795e21f106023750, type: 2}
+  - {fileID: 11400000, guid: 21b1d122b5f56354fbf0ca6bf39923fa, type: 2}
   obstacleHolder: {fileID: 1899434614}
   playerBufferBeforeSpawn: 7
 --- !u!1001 &20621797

@@ -25,5 +25,5 @@ MonoBehaviour:
   distanceUntilDestruction: 100
   rotationVector: {x: 0, y: 0, z: 0}
   incomeMultiplier: 1
-  multiplierToMobs: 1
+  multiplierToMobs: 0.5
   multiplierToBlocks: 1

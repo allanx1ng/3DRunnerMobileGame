@@ -15,6 +15,8 @@ public class Initialize : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        
         
         for (int i = 0; i<UIList.Length;i++) {
             if (UIList[i].name == "Main Menu") {
@@ -24,6 +26,13 @@ public class Initialize : MonoBehaviour
             }
         }
 
+        if (PlayerPrefs.GetInt("ShouldStartGame") == 1)
+        {
+            GameManager.Instance.StartGame();
+        } else {
+            Time.timeScale = 0f;
+        }
+        
         Init();
     }
 

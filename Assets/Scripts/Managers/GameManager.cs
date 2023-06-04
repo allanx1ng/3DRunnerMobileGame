@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     public string path = "";
     public string persistentPath = "";
+
+    public GameObject InGameUI;
+    public GameObject MenuUI;
     
 
     public void Awake() {
@@ -87,11 +90,34 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         // Get the index of the current active scene
+        PlayerPrefs.SetInt("ShouldStartGame", 1);
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // Load the current scene using its build index
         SceneManager.LoadScene(currentSceneIndex);
-        Time.timeScale = 1f;
+        // Time.timeScale = 1f;
+        // InGameUI.SetActive(true);
+        // MenuUI.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        PlayerPrefs.SetInt("ShouldStartGame", 0);
+        InGameUI.SetActive(true);
+        MenuUI.SetActive(false);
+         Time.timeScale = 1f;
+    }
+
+    public void MainMenu()
+    {
+        // Get the index of the current active scene
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Load the current scene using its build index
+        SceneManager.LoadScene(currentSceneIndex);
+        // Time.timeScale = 0f;
+        // InGameUI.SetActive(false);
+        // MenuUI.SetActive(true);
     }
 
     public PlayerData GetPlayerData() {

@@ -36,7 +36,6 @@ public class ShopManagerScript : MonoBehaviour
     void UpdateShop()
     {
         coins = parentComponent.getCoins();
-
         coinUI.text = coins.ToString();
         loadPanels();
     }
@@ -69,7 +68,6 @@ public class ShopManagerScript : MonoBehaviour
     void setAllTemplatesFalse()
     {
         Transform parentObject = ShopWeaponTemplate.transform.parent;
-        Debug.Log(parentComponent.name);
         for (int i = 0; i < parentObject.transform.childCount; i++)
         {
             Transform child2 = parentObject.transform.GetChild(i);
@@ -97,6 +95,7 @@ public class ShopManagerScript : MonoBehaviour
                     parentComponent.addCoins(-price);
                     weapons[i].isOwned = true;
                     UpdateShop();
+                    GameManager.Instance.SetPurchasedWeapons(weapons);
                     //unlock item 
                 }
                 break;

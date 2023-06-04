@@ -39,6 +39,21 @@ public class GameManager : MonoBehaviour
         playerData.SaveData(path);
     }
 
+    public void SetPurchasedWeapons(List<Weapon> weapons) {
+        
+        List<int> owned = new List<int>();
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            if (weapons[i].isOwned)
+            {
+                owned.Add(i);
+            }
+
+        }
+
+        playerData.items = owned.ToArray();
+    }
+
     public int GetHighScore() {
         return playerData.getHighScore();
     }

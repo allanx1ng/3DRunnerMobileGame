@@ -35,7 +35,6 @@ public class Initialize : MonoBehaviour
 
         int[] items = playerData.getItems();
         
-        Debug.Log(weapons[0]);
         for (int i = 0; i<items.Length; i++) {
             int j = items[i];
             Weapon w = weapons[j];

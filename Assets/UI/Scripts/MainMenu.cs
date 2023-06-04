@@ -23,8 +23,9 @@ public class MainMenu : MonoBehaviour
     }
 
     public void StartGame() {
-        gameObject.SetActive(false);
-        GoToScene("Game Scene");
+        //gameObject.SetActive(false);
+        // GoToScene("Game Scene"); // old code
+        GameManager.Instance.StartGame();
     }
 
     public void QuitApp()

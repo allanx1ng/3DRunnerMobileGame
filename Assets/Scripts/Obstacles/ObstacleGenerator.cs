@@ -16,7 +16,9 @@ public class ObstacleGenerator : MonoBehaviour
     private int currentSizeMargin = MIN_SIZE_MARGIN;
     private int clusterIndex = 0; // the index on the current cluster
     private int marginIndex = 0; // the index when not spawning a cluster, 
-    
+    private int safeRow = 0;    // Which row should be free of bedrock
+
+
     
     [TextArea]
     public string ChanceComment = "Inbetween clusters, there will be areas of empty space in the margins. Here it can spawn things based on these probabilities";
@@ -41,8 +43,6 @@ public class ObstacleGenerator : MonoBehaviour
 
 
     public void GenerateObstacles(Vector3 position, int amount, TerrainData terrainData) {
-        
-        
 
         // Generate multiple obstacles centered at the given position, creating a row of obstacles on the x-axis
         float startX = 0 - (((float) amount - 1) / 2 * sizeOfBlock);    
@@ -83,6 +83,8 @@ public class ObstacleGenerator : MonoBehaviour
 
         currentSizeCluster = Random.Range(MIN_SIZE_CLUSTER, MAX_SIZE_CLUSTER + 1);
         currentSizeMargin = Random.Range(MIN_SIZE_MARGIN, MAX_SIZE_MARGIN + 1);
+
+        safeRow = Random.Range(0, 3);
     }
 
     private void spawnRowCluster(float startX, int amount, TerrainData terrainData, Vector3 position, GameObject obstacleRow) {
@@ -90,6 +92,7 @@ public class ObstacleGenerator : MonoBehaviour
             float newX = startX + (i * sizeOfBlock);
             GameObject block = ChooseBlock(terrainData);
             block.tag = "Block";
+            if (block.name.Contains("Bedrock") && safeRow == i) continue;
             GenerateObstacle(new Vector3(newX, position.y + 3, position.z), block, obstacleRow);
         }
         
@@ -109,7 +112,6 @@ public class ObstacleGenerator : MonoBehaviour
                 return;
             } else if (randomNumber <= chanceForMob + chanceForNothing) {
                 // spawn mob
-                
                 GameObject mob = ChooseMob(terrainData);
                 mob.tag = "Mob";
                 GenerateObstacle(new Vector3(newX, position.y + 1, position.z), mob, obstacleRow);

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bedrock Block Data
   m_EditorClassIdentifier: 
   gameObject: {fileID: 1655224585016773333, guid: fa4f3b1f47d994457bb8d8b8bf5bf5ac, type: 3}
-  chance: 5
+  chance: 7

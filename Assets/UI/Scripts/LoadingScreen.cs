@@ -15,7 +15,7 @@ public class LoadingScreen : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("ShouldStartGame"));
+
         if (PlayerPrefs.GetInt("ShouldStartGame") == 1 || PlayerPrefs.GetInt("ShouldStartGame") == 2) {
             LoadUI.SetActive(false);
         } else {

@@ -81,6 +81,7 @@ public class Inventory : MonoBehaviour
                 int j = weapons[i].itemID;
                 Panel.Find("Equip").Find("Button").GetComponent<Button>().onClick.AddListener(() => EquipWeapon(j));
                 if (weapons[i].isEquipped) {
+                    GameManager.Instance.SetWeapon(i);
                     Panel.Find("Equip").GetComponent<Toggle>().isOn = true;
                 } else {
                     Panel.Find("Equip").GetComponent<Toggle>().isOn = false;

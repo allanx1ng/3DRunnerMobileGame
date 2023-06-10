@@ -41,6 +41,7 @@ public class Initialize : MonoBehaviour
         playerData = GameManager.Instance.GetPlayerData();
         for(int i = 0; i<weapons.Length; i++) {
             weapons[i].isOwned = false; 
+            weapons[i].isEquipped = false;
         }
 
         int[] items = playerData.getItems();
@@ -50,6 +51,9 @@ public class Initialize : MonoBehaviour
             Weapon w = weapons[j];
             w.isOwned = true;
         }
+
+        int k = getWeaponEquipped();
+        weapons[k].isEquipped = true;
     }
 
     public void addCoins(int i) {
@@ -70,6 +74,10 @@ public class Initialize : MonoBehaviour
         }
         int[] tempArr = tempList.ToArray();
         return tempArr;
+    }
+
+    public int getWeaponEquipped() {
+        return GameManager.Instance.GetWeapon();
     }
 
 

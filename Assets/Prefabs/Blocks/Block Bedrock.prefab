@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980704d5bc165fc43a49a0e56667bc89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 420
+  maxHealth: 400
   gemParticleSystem: {fileID: 5639207140343883205, guid: 04502370f1d2abd42a1a535d80763df4, type: 3}
   effect: {fileID: 4223021209848715075, guid: 79c44fe8ae2ec7d4eaffd70478f466d5, type: 3}
   stageModels:

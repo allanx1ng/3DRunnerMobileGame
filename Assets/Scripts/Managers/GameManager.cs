@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.Events;
 public class GameManager : MonoBehaviour
 {
     
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject InGameUI;
     public GameObject MenuUI;
+
+    public UnityEvent onWeaponChanged;
     
 
     public void Awake() {
@@ -45,10 +48,7 @@ public class GameManager : MonoBehaviour
         playerData.SaveData(path);
     }
 
-    public void SetWeapon(int i) {
-        playerData.setWeaponEquipped(i);
-        playerData.SaveData(path);
-    }
+
 
     public void SetPurchasedWeapons(List<Weapon> weapons) {
         
@@ -83,6 +83,12 @@ public class GameManager : MonoBehaviour
 
     public int GetWeapon() {
         return playerData.getWeaponEquipped();
+    }
+
+    public void SetWeapon(int i) {
+        playerData.setWeaponEquipped(i);
+        playerData.SaveData(path);
+        onWeaponChanged?.Invoke();
     }
 
     private void SetPaths()

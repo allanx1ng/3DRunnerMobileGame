@@ -26,6 +26,7 @@ public class Initialize : MonoBehaviour
             }
         }
 
+        // Debug.Log(PlayerPrefs.GetInt("ShouldStartGame"));
         if (PlayerPrefs.GetInt("ShouldStartGame") == 1)
         {
             GameManager.Instance.StartGame();

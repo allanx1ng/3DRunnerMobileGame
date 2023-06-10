@@ -28,6 +28,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    void OnApplicationQuit()
+    {
+        
+        PlayerPrefs.SetInt("ShouldStartGame", 0);
+    }
+
+
     public int getCoins() {
         return playerData.getCoins();
     }

@@ -19,7 +19,7 @@ MonoBehaviour:
   weaponRotation: {x: -30, y: -15, z: -15}
   projectilePosition: {x: 0, y: 0, z: 1}
   projectileRotation: {x: 0, y: 90, z: 270}
-  damage: 10
+  damage: 12
   speed: 15
   delayBetweenShots: 0.3
   distanceUntilDestruction: 100

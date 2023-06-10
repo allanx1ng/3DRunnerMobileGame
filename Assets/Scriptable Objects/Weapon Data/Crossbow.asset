@@ -19,7 +19,7 @@ MonoBehaviour:
   weaponRotation: {x: 0, y: 0, z: 0}
   projectilePosition: {x: 0, y: 0, z: 1.5}
   projectileRotation: {x: 90, y: 0, z: 0}
-  damage: 10
+  damage: 7
   speed: 25
   delayBetweenShots: 0.15
   distanceUntilDestruction: 100
@@ -27,4 +27,4 @@ MonoBehaviour:
   rotationVector: {x: 0, y: 180, z: 0}
   incomeMultiplier: 1
   multiplierToMobs: 2
-  multiplierToBlocks: 0.8
+  multiplierToBlocks: 1

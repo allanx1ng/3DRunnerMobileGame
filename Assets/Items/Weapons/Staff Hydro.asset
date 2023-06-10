@@ -16,8 +16,8 @@ MonoBehaviour:
   itemID: 6
   description: A magical staff that harnesses the power of water to cast spells on
     a large group of enemies. Not effective against terrain.
-  baseCost: 10
-  isOwned: 0
+  baseCost: 1500
+  isOwned: 1
   isEquipped: 0
   damageToMobs: 3
   damageToBlocks: 0

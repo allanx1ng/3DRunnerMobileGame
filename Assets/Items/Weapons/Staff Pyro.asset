@@ -17,8 +17,8 @@ MonoBehaviour:
   description: 'A magical staff that harnesses the power of fire to ignite enemies
     and deal heavy damage over a medium area, effective against both enemines and
     terrain. '
-  baseCost: 10
-  isOwned: 0
+  baseCost: 7000
+  isOwned: 1
   isEquipped: 0
   damageToMobs: 5
   damageToBlocks: 3

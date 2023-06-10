@@ -16,7 +16,7 @@ MonoBehaviour:
   itemID: 5
   description: A magical staff that harnesses the power of lightning to stun and
     shock enemies in a chain. Reduced effectiveness against terrain.
-  baseCost: 10
+  baseCost: 4000
   isOwned: 1
   isEquipped: 0
   damageToMobs: 4

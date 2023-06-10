@@ -28,6 +28,7 @@ public class WeaponData : ScriptableObject
     public float speed = 10f;
     public float delayBetweenShots = 0.25f;    // the firing rate of the weapon, 2f = 2 seconds between each shot
     public float distanceUntilDestruction = 100f;
+    public float coinsPerHit = 1f;
 
 
     [Header("Misc")]

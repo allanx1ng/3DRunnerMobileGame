@@ -38,6 +38,11 @@ public class Enemy : MonoBehaviour
         TakeDamage(projectile.weaponData);
     }
 
+    public Vector3 SnapXToNearest5(Vector3 vector)
+    {
+        vector.x = Mathf.Round(vector.x / 5) * 5;
+        return vector;
+    }
     IEnumerator SpawnProjectile()
     {
         while (true)
@@ -45,8 +50,8 @@ public class Enemy : MonoBehaviour
 
             GameObject projectilePrefab = weaponData.projectileModel;
             Quaternion rotation = Quaternion.Euler(weaponData.projectileRotation);
-
-            GameObject spawnedProjectile = Instantiate(projectilePrefab, transform.position + weaponData.projectilePosition, rotation);
+            Vector3 position = SnapXToNearest5(transform.position + weaponData.projectilePosition);
+            GameObject spawnedProjectile = Instantiate(projectilePrefab, position, rotation);
             EnemyProjectile enemyProjectileScript = spawnedProjectile.AddComponent<EnemyProjectile>();
             enemyProjectileScript.Initialize(weaponData);
 
@@ -64,7 +69,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(WeaponData weaponData)
     {
         enemyHealth -= weaponData.damage * weaponData.multiplierToMobs;
-        CoinManager.Instance.AddCoins((int) weaponData.damage);
+        CoinManager.Instance.AddCoins((int) weaponData.coinsPerHit);
 
         AudioManager.Instance.PlaySound("Mob Hit");
 

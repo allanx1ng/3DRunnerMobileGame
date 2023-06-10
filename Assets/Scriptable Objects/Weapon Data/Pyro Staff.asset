@@ -23,7 +23,8 @@ MonoBehaviour:
   speed: 20
   delayBetweenShots: 0.4
   distanceUntilDestruction: 75
+  coinsPerHit: 3
   rotationVector: {x: 0, y: 0, z: 0}
   incomeMultiplier: 1
-  multiplierToMobs: 3
-  multiplierToBlocks: 3
+  multiplierToMobs: 2.5
+  multiplierToBlocks: 2

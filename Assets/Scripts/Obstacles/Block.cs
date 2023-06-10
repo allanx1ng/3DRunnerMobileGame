@@ -43,7 +43,7 @@ public class Block : MonoBehaviour
     private void TakeDamageFromProjectile(WeaponData weaponData, PlayerController playerController) {
         
         currentHealth -= weaponData.damage * weaponData.multiplierToBlocks;
-        CoinManager.Instance.AddCoins((int) weaponData.damage);
+        CoinManager.Instance.AddCoins((int) weaponData.coinsPerHit);
 
         
 
@@ -52,7 +52,7 @@ public class Block : MonoBehaviour
 
             Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            CoinManager.Instance.AddCoins((int) maxHealth);
+            CoinManager.Instance.AddCoins((int) maxHealth / 5);
             return;
         } else {
             AudioManager.Instance.PlaySound("Block Hit");

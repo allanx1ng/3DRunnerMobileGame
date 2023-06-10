@@ -15,15 +15,13 @@ public class LoadingScreen : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("ShouldStartGame") != 1 && PlayerPrefs.GetInt("ShouldStartGame") != 2) {
-            StartCoroutine(LoadGame());
-        } else {
+        
+        if (PlayerPrefs.GetInt("ShouldStartGame") == 1 || PlayerPrefs.GetInt("ShouldStartGame") == 2) {
             LoadUI.SetActive(false);
+        } else {
+            StartCoroutine(LoadGame());
         }
 
-        
-        
-        
     }
 
     private System.Collections.IEnumerator LoadGame()

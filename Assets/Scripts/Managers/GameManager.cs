@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        PlayerPrefs.SetInt("ShouldStartGame", 0);
+        PlayerPrefs.SetInt("ShouldStartGame", 2);
         InGameUI.SetActive(true);
         MenuUI.SetActive(false);
          Time.timeScale = 1f;
